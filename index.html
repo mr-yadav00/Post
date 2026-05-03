@@ -3,2240 +3,1744 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SiteLab India — Web Solutions for Small Businesses</title>
+
+<!-- ============================================================
+  SEO META TAGS
+  ✏️ REPLACE: title, description with your actual content
+============================================================ -->
+<title>Gym Website Design India | High-Converting Websites for Gym Owners | SiteLab India</title>
+<meta name="description" content="Get a high-converting gym website in 48 hours. Pay only if you like it. WhatsApp lead system included. Built for Indian gym owners. Starting ₹999.">
+<meta name="keywords" content="gym website design India, website for gym owners, fitness website developer India, gym website Kota, affordable gym website">
+<meta property="og:title" content="Get More Gym Members with a High-Converting Website — SiteLab India">
+<meta property="og:description" content="See your gym website demo in 48 hours. Pay only if you like it. WhatsApp leads included.">
+<!-- ✏️ REPLACE: og:image with your actual preview image URL -->
+<meta property="og:image" content="[YOUR_OG_IMAGE_URL]">
+<meta property="og:type" content="website">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Space+Mono&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --gold: #FFB800;
-    --gold-dim: #cc9200;
-    --gold-glow: rgba(255,184,0,0.18);
-    --bg: #07070f;
-    --bg2: #0d0d1a;
-    --bg3: #111124;
-    --card: rgba(255,255,255,0.04);
-    --card-border: rgba(255,184,0,0.12);
-    --white: #f0f0fa;
-    --muted: #7a7a99;
-    --green: #00e676;
-    --radius: 16px;
-  }
+/* =====================================================
+   DESIGN SYSTEM
+===================================================== */
+:root {
+  --red: #E8000D;
+  --red-dim: rgba(232,0,13,0.12);
+  --red-glow: rgba(232,0,13,0.25);
+  --black: #080808;
+  --black2: #111111;
+  --black3: #1a1a1a;
+  --white: #F8F8F8;
+  --muted: #888;
+  --border: rgba(255,255,255,0.08);
+  --card: rgba(255,255,255,0.03);
+  --green: #00E676;
+  --gold: #FFB800;
+  --r: 14px;
+}
 
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Outfit', sans-serif;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-thumb { background: var(--red); border-radius: 10px; }
+img { max-width: 100%; display: block; }
 
-  html { scroll-behavior: smooth; }
+/* UTILITY */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+.section-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--red);
+  margin-bottom: 14px;
+}
+.section-tag::before { content:''; width: 20px; height: 1.5px; background: var(--red); }
+.section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 0.95; letter-spacing: 1px; margin-bottom: 16px;
+}
+.section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; }
+.reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 
-  body {
-    background: var(--bg);
-    color: var(--white);
-    font-family: 'Outfit', sans-serif;
-    overflow-x: hidden;
-    cursor: none;
-  }
+/* BUTTONS */
+.btn-red {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red); color: #fff;
+  padding: 15px 30px; border-radius: 10px;
+  font-weight: 700; font-size: 0.95rem; letter-spacing: 0.5px;
+  text-decoration: none; border: none; cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-red:hover { transform: translateY(-3px); box-shadow: 0 10px 30px var(--red-glow); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: var(--white);
+  padding: 14px 30px; border-radius: 10px;
+  font-weight: 600; font-size: 0.95rem;
+  text-decoration: none; border: 1.5px solid rgba(255,255,255,0.2);
+  cursor: pointer; font-family: 'Outfit', sans-serif;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.btn-outline:hover { border-color: rgba(255,255,255,0.5); transform: translateY(-3px); }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #25D366; color: #fff;
+  padding: 15px 30px; border-radius: 10px;
+  font-weight: 700; font-size: 0.95rem;
+  text-decoration: none; border: none; cursor: pointer;
+  font-family: 'Outfit', sans-serif;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-wa:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(37,211,102,0.3); }
 
-  /* CUSTOM CURSOR */
-  .cursor {
-    width: 12px; height: 12px;
-    background: var(--gold);
-    border-radius: 50%;
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 9999;
-    transform: translate(-50%,-50%);
-    transition: transform 0.1s, width 0.2s, height 0.2s, background 0.2s;
-  }
-  .cursor-ring {
-    width: 36px; height: 36px;
-    border: 1.5px solid rgba(255,184,0,0.5);
-    border-radius: 50%;
-    position: fixed; top: 0; left: 0;
-    pointer-events: none; z-index: 9998;
-    transform: translate(-50%,-50%);
-    transition: transform 0.18s ease, width 0.25s, height 0.25s;
-  }
-  body:hover .cursor { opacity: 1; }
-  a:hover ~ .cursor, button:hover ~ .cursor { width: 20px; height: 20px; }
+/* =====================================================
+   ANNOUNCEMENT BAR
+===================================================== */
+#announce {
+  background: var(--red); color: #fff;
+  text-align: center; padding: 10px 20px;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.5px;
+  position: relative; z-index: 200;
+}
+#announce span { opacity: 0.7; margin: 0 12px; }
 
-  /* SCROLLBAR */
-  ::-webkit-scrollbar { width: 4px; }
-  ::-webkit-scrollbar-track { background: var(--bg); }
-  ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+/* =====================================================
+   NAV
+===================================================== */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(8,8,8,0.95); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 5%; height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem; letter-spacing: 2px;
+  text-decoration: none; color: var(--white);
+}
+.nav-logo span { color: var(--red); }
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  text-decoration: none; color: var(--muted);
+  font-size: 0.88rem; font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-cta {
+  background: var(--red); color: #fff;
+  padding: 9px 22px; border-radius: 8px;
+  font-weight: 700; font-size: 0.85rem;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px var(--red-glow); }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; }
+.hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+.mobile-menu {
+  position: fixed; inset: 0; z-index: 98;
+  background: rgba(8,8,8,0.98); backdrop-filter: blur(20px);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 32px;
+  transform: translateX(100%); transition: transform 0.4s ease;
+}
+.mobile-menu.open { transform: translateX(0); }
+.mobile-menu a {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.8rem; letter-spacing: 3px;
+  color: var(--white); text-decoration: none; transition: color 0.2s;
+}
+.mobile-menu a:hover { color: var(--red); }
+.mobile-close { position: absolute; top: 24px; right: 5%; background: none; border: none; color: var(--white); font-size: 1.6rem; cursor: pointer; }
 
-  /* NAV */
-  nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
-    padding: 0 5%;
-    display: flex; align-items: center; justify-content: space-between;
-    height: 70px;
-    background: rgba(7,7,15,0.85);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,184,0,0.08);
-    transition: all 0.3s;
-  }
-  nav.scrolled { height: 60px; background: rgba(7,7,15,0.97); }
-  .nav-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.7rem;
-    letter-spacing: 2px;
-    color: var(--white);
-    text-decoration: none;
-  }
-  .nav-logo span { color: var(--gold); }
-  .nav-links { display: flex; gap: 36px; list-style: none; }
-  .nav-links a {
-    text-decoration: none; color: var(--muted);
-    font-size: 0.88rem; font-weight: 500;
-    letter-spacing: 0.5px;
-    transition: color 0.2s;
-    position: relative;
-  }
-  .nav-links a::after {
-    content: '';
-    position: absolute; bottom: -4px; left: 0;
-    width: 0; height: 1.5px;
-    background: var(--gold);
-    transition: width 0.3s;
-  }
-  .nav-links a:hover { color: var(--white); }
-  .nav-links a:hover::after { width: 100%; }
-  .nav-cta {
-    background: var(--gold); color: #000;
-    padding: 9px 22px; border-radius: 8px;
-    font-weight: 700; font-size: 0.85rem;
-    text-decoration: none; letter-spacing: 0.5px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(255,184,0,0.35); }
-  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-  .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+/* =====================================================
+   HERO
+===================================================== */
+#hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 60px;
+  padding: 80px 5% 60px;
+  position: relative; overflow: hidden;
+  max-width: 1200px; margin: 0 auto;
+}
+.hero-bg {
+  position: fixed; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 40%, rgba(232,0,13,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(232,0,13,0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hero-grid-lines {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-left { position: relative; z-index: 1; }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--red-dim); border: 1px solid rgba(232,0,13,0.3);
+  padding: 6px 16px; border-radius: 100px;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--red);
+  margin-bottom: 24px; animation: fadeUp 0.7s ease both;
+}
+.hero-eyebrow .pulse { width: 7px; height: 7px; background: var(--red); border-radius: 50%; animation: blink 2s infinite; box-shadow: 0 0 8px var(--red); }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
-  /* HERO */
-  #hero {
-    min-height: 100vh;
-    display: flex; align-items: center;
-    padding: 120px 5% 60px;
-    position: relative; overflow: hidden;
-  }
-  .hero-bg {
-    position: absolute; inset: 0; z-index: 0;
-    background: radial-gradient(ellipse 70% 60% at 70% 50%, rgba(255,184,0,0.06) 0%, transparent 70%),
-                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(100,80,255,0.07) 0%, transparent 60%);
-  }
-  .hero-grid {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(255,184,0,0.04) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,184,0,0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(ellipse 80% 80% at center, black 20%, transparent 80%);
-  }
-  .floating-shapes { position: absolute; inset: 0; overflow: hidden; z-index: 0; }
-  .shape {
-    position: absolute; border-radius: 50%;
-    animation: float 8s ease-in-out infinite;
-  }
-  .shape-1 { width: 300px; height: 300px; background: radial-gradient(circle, rgba(255,184,0,0.07), transparent 70%); top: 10%; right: 10%; }
-  .shape-2 { width: 200px; height: 200px; background: radial-gradient(circle, rgba(100,80,255,0.08), transparent 70%); bottom: 20%; right: 30%; animation-delay: -3s; }
-  .shape-3 { width: 150px; height: 150px; background: radial-gradient(circle, rgba(0,230,118,0.07), transparent 70%); top: 50%; left: 5%; animation-delay: -5s; }
-  @keyframes float {
-    0%,100% { transform: translateY(0) scale(1); }
-    50% { transform: translateY(-30px) scale(1.05); }
-  }
+.hero-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.8rem, 6vw, 6.5rem);
+  line-height: 0.88; letter-spacing: 1px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.7s ease 0.1s both;
+}
+.hero-h1 .red { color: var(--red); }
+.hero-h1 .stroke { -webkit-text-stroke: 1.5px rgba(255,255,255,0.3); color: transparent; }
 
-  .hero-content { position: relative; z-index: 1; max-width: 650px; }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: var(--gold-glow); border: 1px solid rgba(255,184,0,0.3);
-    padding: 6px 16px; border-radius: 100px;
-    font-size: 0.78rem; font-weight: 600; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--gold);
-    margin-bottom: 28px;
-    animation: fadeUp 0.8s ease both;
-  }
-  .hero-badge .dot { width: 7px; height: 7px; background: var(--green); border-radius: 50%; box-shadow: 0 0 8px var(--green); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+.hero-sub {
+  color: var(--muted); font-size: 1.1rem; line-height: 1.7;
+  max-width: 460px; margin-bottom: 32px;
+  animation: fadeUp 0.7s ease 0.2s both;
+}
+.hero-sub strong { color: var(--white); }
 
-  .hero-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(3.5rem, 7vw, 6.5rem);
-    line-height: 0.92;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
-    animation: fadeUp 0.8s ease 0.15s both;
-  }
-  .hero-title .accent { color: var(--gold); display: block; }
-  .hero-title .stroke {
-    -webkit-text-stroke: 1.5px var(--white);
-    color: transparent;
-  }
+.hero-btns {
+  display: flex; flex-wrap: wrap; gap: 12px;
+  margin-bottom: 36px;
+  animation: fadeUp 0.7s ease 0.3s both;
+}
 
-  .hero-sub {
-    font-size: 1.08rem; color: var(--muted);
-    line-height: 1.7; max-width: 480px;
-    margin-bottom: 36px;
-    animation: fadeUp 0.8s ease 0.3s both;
-  }
-  .hero-sub strong { color: var(--white); }
+.hero-urgency {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 0.82rem; color: var(--muted);
+  animation: fadeUp 0.7s ease 0.4s both;
+}
+.hero-urgency .dot { width: 8px; height: 8px; background: var(--red); border-radius: 50%; animation: blink 1.5s infinite; }
 
-  .hero-btns {
-    display: flex; gap: 14px; flex-wrap: wrap;
-    animation: fadeUp 0.8s ease 0.45s both;
-  }
-  .btn-primary {
-    background: var(--gold); color: #000;
-    padding: 14px 30px; border-radius: 10px;
-    font-weight: 700; font-size: 0.95rem;
-    text-decoration: none; letter-spacing: 0.5px;
-    display: flex; align-items: center; gap: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,184,0,0.4); }
-  .btn-secondary {
-    background: transparent; color: var(--white);
-    padding: 14px 30px; border-radius: 10px;
-    font-weight: 600; font-size: 0.95rem;
-    text-decoration: none;
-    border: 1.5px solid rgba(255,255,255,0.15);
-    display: flex; align-items: center; gap: 8px;
-    transition: border-color 0.2s, transform 0.2s;
-  }
-  .btn-secondary:hover { border-color: var(--gold); transform: translateY(-3px); }
+.hero-trust {
+  display: flex; gap: 28px; margin-top: 40px;
+  animation: fadeUp 0.7s ease 0.5s both;
+  flex-wrap: wrap;
+}
+.trust-item { display: flex; flex-direction: column; }
+.trust-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem; color: var(--red); line-height: 1; letter-spacing: 1px;
+}
+.trust-label { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
 
-  .hero-stats {
-    display: flex; gap: 40px; margin-top: 52px;
-    animation: fadeUp 0.8s ease 0.6s both;
-  }
-  .stat-item { }
-  .stat-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem; color: var(--gold);
-    line-height: 1; letter-spacing: 1px;
-  }
-  .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+/* HERO RIGHT — Phone Mockup */
+.hero-right {
+  display: flex; justify-content: center; align-items: center;
+  position: relative; animation: fadeIn 1s ease 0.4s both;
+}
+.phone-wrap {
+  position: relative; width: 280px;
+}
+.phone-glow {
+  position: absolute; width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(232,0,13,0.2) 0%, transparent 65%);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  z-index: 0;
+}
+.phone-frame {
+  width: 100%; background: #111;
+  border-radius: 36px;
+  border: 2px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04);
+  position: relative; z-index: 1;
+}
+.phone-notch {
+  background: #000; padding: 14px;
+  display: flex; justify-content: center;
+}
+.phone-notch-inner { width: 80px; height: 10px; background: #222; border-radius: 100px; }
+/* ✏️ REPLACE: phone-screen img src with your gym demo screenshot */
+.phone-screen {
+  width: 100%; height: 460px;
+  background: linear-gradient(160deg, #1a0000 0%, #0a0a0a 40%, #1a0000 100%);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px; padding: 20px;
+}
+.phone-mock-badge { background: var(--red); color: #fff; font-size: 0.55rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 10px; border-radius: 100px; }
+.phone-mock-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; letter-spacing: 2px; color: #fff; text-align: center; }
+.phone-mock-logo span { color: var(--red); }
+.phone-mock-tagline { font-size: 0.6rem; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; text-align: center; }
+.phone-mock-img {
+  width: 100%; height: 140px;
+  background: var(--red-dim);
+  border-radius: 10px;
+  border: 1px solid rgba(232,0,13,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem; color: rgba(255,255,255,0.3);
+  /* ✏️ REPLACE: add background-image: url('YOUR_GYM_DEMO_SCREENSHOT') */
+  background-size: cover; background-position: center;
+  overflow: hidden;
+}
+.phone-mock-btn { background: var(--red); color: #fff; padding: 10px 24px; border-radius: 8px; font-size: 0.7rem; font-weight: 700; width: 100%; text-align: center; }
+.phone-float-1 {
+  position: absolute; top: 40px; right: -50px;
+  background: var(--black2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 10px 14px;
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5); z-index: 2;
+  animation: floatCard 4s ease-in-out infinite;
+}
+.phone-float-2 {
+  position: absolute; bottom: 60px; left: -60px;
+  background: var(--black2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 10px 14px;
+  display: flex; align-items: center; gap: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5); z-index: 2;
+  animation: floatCard 4s ease-in-out infinite 2s;
+}
+@keyframes floatCard { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+.float-icon { font-size: 1.4rem; }
+.float-text h5 { font-size: 0.75rem; font-weight: 700; color: var(--white); }
+.float-text p { font-size: 0.65rem; color: var(--muted); }
 
-  .hero-visual {
-    position: absolute; right: 4%; top: 50%;
-    transform: translateY(-50%);
-    width: min(480px, 42vw);
-    z-index: 1;
-    animation: fadeIn 1s ease 0.5s both;
-  }
-  .browser-mock {
-    background: var(--bg3);
-    border-radius: 14px;
-    border: 1px solid rgba(255,184,0,0.15);
-    overflow: hidden;
-    box-shadow: 0 40px 100px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
-  }
-  .browser-bar {
-    background: #1a1a2e; padding: 12px 16px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .browser-dots { display: flex; gap: 6px; }
-  .browser-dots span {
-    width: 10px; height: 10px; border-radius: 50%;
-  }
-  .browser-dots span:nth-child(1) { background: #ff5f57; }
-  .browser-dots span:nth-child(2) { background: #ffbd2e; }
-  .browser-dots span:nth-child(3) { background: #28c840; }
-  .browser-url {
-    flex: 1; background: rgba(255,255,255,0.06);
-    border-radius: 6px; padding: 5px 12px;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem; color: var(--muted);
-  }
-  .browser-content {
-    padding: 0;
-    height: 280px;
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 12px; position: relative; overflow: hidden;
-  }
-  .mock-hero-text {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem; color: #fff;
-    text-align: center; z-index: 1;
-  }
-  .mock-hero-text span { color: var(--gold); }
-  .mock-badge-pill {
-    background: rgba(255,184,0,0.2); border: 1px solid rgba(255,184,0,0.4);
-    padding: 4px 14px; border-radius: 100px;
-    font-size: 0.65rem; font-weight: 600; letter-spacing: 1px;
-    color: var(--gold); z-index: 1;
-  }
-  .mock-cta-bar {
-    display: flex; gap: 8px; z-index: 1;
-  }
-  .mock-btn {
-    padding: 7px 16px; border-radius: 6px;
-    font-size: 0.65rem; font-weight: 700;
-  }
-  .mock-btn.gold { background: var(--gold); color: #000; }
-  .mock-btn.outline { border: 1px solid rgba(255,255,255,0.3); color: #fff; }
-  .mock-glow {
-    position: absolute; width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(255,184,0,0.15) 0%, transparent 70%);
-    top: 50%; left: 50%; transform: translate(-50%,-50%);
-  }
-  .mock-grid-lines {
-    position: absolute; inset: 0;
-    background-image: linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0;transform:scale(0.95)} to{opacity:1;transform:scale(1)} }
 
-  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes fadeIn { from { opacity: 0; transform: translateY(-50%) scale(0.95); } to { opacity: 1; transform: translateY(-50%) scale(1); } }
+/* =====================================================
+   TRUST BAR
+===================================================== */
+#trust-bar {
+  background: var(--black2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 28px 5%;
+}
+.trust-bar-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: center;
+  gap: 48px; flex-wrap: wrap;
+}
+.tb-item {
+  display: flex; align-items: center; gap: 12px;
+}
+.tb-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  background: var(--red-dim); border: 1px solid rgba(232,0,13,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+}
+.tb-text h4 { font-size: 0.9rem; font-weight: 700; color: var(--white); }
+.tb-text p { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
 
-  /* MARQUEE */
-  .marquee-section {
-    overflow: hidden; padding: 18px 0;
-    border-top: 1px solid rgba(255,184,0,0.08);
-    border-bottom: 1px solid rgba(255,184,0,0.08);
-    background: rgba(255,184,0,0.03);
-  }
-  .marquee-track {
-    display: flex; gap: 60px;
-    animation: marquee 20s linear infinite;
-    white-space: nowrap;
-  }
-  .marquee-item {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1rem; letter-spacing: 3px;
-    color: var(--muted); display: flex; align-items: center; gap: 60px;
-  }
-  .marquee-item::after { content: '✦'; color: var(--gold); font-size: 0.7rem; }
-  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* =====================================================
+   FREE DEMO OFFER
+===================================================== */
+#demo-offer {
+  padding: 100px 5%;
+  background: var(--black);
+  background-image: radial-gradient(ellipse 60% 40% at 50% 100%, rgba(232,0,13,0.06) 0%, transparent 60%);
+}
+.demo-offer-inner {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+}
+.demo-offer-left .section-title span { color: var(--red); }
+.demo-points { display: flex; flex-direction: column; gap: 16px; margin: 28px 0; }
+.demo-point {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 18px 20px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; transition: border-color 0.3s;
+}
+.demo-point:hover { border-color: rgba(232,0,13,0.3); }
+.demo-point-icon {
+  width: 36px; height: 36px; border-radius: 8px;
+  background: var(--red-dim); border: 1px solid rgba(232,0,13,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.demo-point-text h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 3px; }
+.demo-point-text p { font-size: 0.83rem; color: var(--muted); line-height: 1.5; }
+.demo-warning {
+  background: rgba(255,184,0,0.07); border: 1px solid rgba(255,184,0,0.2);
+  border-radius: 10px; padding: 14px 18px;
+  font-size: 0.82rem; color: rgba(255,255,255,0.6);
+  display: flex; align-items: flex-start; gap: 10px;
+}
+.demo-warning span { color: var(--gold); font-weight: 700; }
+.demo-offer-right {
+  background: var(--black2); border: 1px solid var(--border);
+  border-radius: 20px; padding: 36px 32px;
+  position: relative; overflow: hidden;
+}
+.demo-offer-right::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+}
+.demo-form-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 1px; margin-bottom: 6px;
+}
+.demo-form-sub { color: var(--muted); font-size: 0.85rem; margin-bottom: 24px; }
+.form-field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+.form-field label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; color: var(--muted); }
+.form-field label span { color: var(--red); }
+.form-field input {
+  background: rgba(255,255,255,0.04); border: 1.5px solid rgba(255,255,255,0.08);
+  border-radius: 10px; padding: 12px 16px;
+  color: var(--white); font-family: 'Outfit', sans-serif; font-size: 0.92rem;
+  outline: none; transition: border-color 0.2s;
+}
+.form-field input::placeholder { color: rgba(255,255,255,0.2); }
+.form-field input:focus { border-color: var(--red); }
+.form-submit {
+  width: 100%; padding: 15px; border-radius: 10px;
+  background: var(--red); color: #fff; border: none;
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem;
+  cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 6px;
+}
+.form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px var(--red-glow); }
+.form-note { text-align: center; font-size: 0.75rem; color: var(--muted); margin-top: 12px; }
+.slots-badge {
+  display: flex; align-items: center; gap: 6px; justify-content: center;
+  margin-bottom: 20px;
+}
+.slots-pips { display: flex; gap: 4px; }
+.slot-pip { width: 14px; height: 6px; border-radius: 3px; background: var(--red); }
+.slot-pip.taken { background: rgba(255,255,255,0.1); }
+.slots-text { font-size: 0.78rem; color: var(--muted); }
+.slots-text strong { color: var(--white); }
 
-  /* SECTIONS COMMON */
-  section { padding: 100px 5%; }
-  .section-tag {
-    display: inline-flex; align-items: center; gap: 8px;
-    font-size: 0.75rem; font-weight: 700;
-    letter-spacing: 3px; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 16px;
-  }
-  .section-tag::before { content: ''; width: 24px; height: 1.5px; background: var(--gold); }
-  .section-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    line-height: 1; letter-spacing: 1px;
-    margin-bottom: 18px;
-  }
-  .section-sub { color: var(--muted); font-size: 1rem; line-height: 1.7; max-width: 500px; }
-  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+/* =====================================================
+   BENEFITS
+===================================================== */
+#benefits { padding: 100px 5%; background: var(--black2); }
+.benefits-grid {
+  max-width: 1100px; margin: 52px auto 0;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.benefit-card {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--r); padding: 32px 28px;
+  transition: transform 0.3s, border-color 0.3s;
+  position: relative; overflow: hidden;
+}
+.benefit-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--red), transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.benefit-card:hover { transform: translateY(-5px); border-color: rgba(232,0,13,0.25); }
+.benefit-card:hover::after { opacity: 1; }
+.benefit-icon { font-size: 2rem; margin-bottom: 16px; }
+.benefit-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 8px; }
+.benefit-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+.benefits-cta { text-align: center; margin-top: 48px; }
 
-  /* SERVICES */
-  #services { background: var(--bg2); }
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px; margin-top: 60px;
-  }
-  .service-card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius);
-    padding: 36px 28px;
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    position: relative; overflow: hidden;
-  }
-  .service-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    opacity: 0; transition: opacity 0.3s;
-  }
-  .service-card:hover { transform: translateY(-6px); border-color: rgba(255,184,0,0.3); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
-  .service-card:hover::before { opacity: 1; }
-  .service-icon {
-    width: 52px; height: 52px;
-    background: var(--gold-glow); border: 1px solid rgba(255,184,0,0.25);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; margin-bottom: 20px;
-  }
-  .service-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
-  .service-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
+/* =====================================================
+   PRICING
+===================================================== */
+#pricing { padding: 100px 5%; background: var(--black); }
+.pricing-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px; margin-top: 52px; align-items: start;
+}
+.price-card {
+  background: var(--black2); border: 1px solid var(--border);
+  border-radius: 18px; padding: 36px 28px;
+  text-align: left; transition: transform 0.3s;
+  position: relative;
+}
+.price-card:hover { transform: translateY(-5px); }
+.price-card.popular {
+  border-color: var(--red);
+  background: linear-gradient(145deg, rgba(232,0,13,0.08) 0%, var(--black2) 100%);
+  transform: scale(1.03);
+}
+.price-card.popular:hover { transform: scale(1.03) translateY(-5px); }
+.popular-tag {
+  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
+  background: var(--red); color: #fff;
+  padding: 4px 18px; border-radius: 100px;
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 1px; white-space: nowrap;
+}
+.price-plan-name { font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.price-amount { display: flex; align-items: flex-end; gap: 4px; margin-bottom: 4px; }
+.price-rs { font-size: 1.5rem; font-weight: 700; color: var(--red); line-height: 1.3; }
+.price-num { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; color: var(--white); line-height: 1; letter-spacing: 1px; }
+.price-desc { color: var(--muted); font-size: 0.83rem; margin-bottom: 24px; }
+.price-label { font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--red); background: var(--red-dim); border: 1px solid rgba(232,0,13,0.2); padding: 3px 10px; border-radius: 100px; display: inline-block; margin-bottom: 16px; }
+.price-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.price-list li { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: rgba(255,255,255,0.8); }
+.price-list li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+.price-list li.no { color: var(--muted); }
+.price-list li.no::before { content: '✕'; color: rgba(255,255,255,0.15); }
+.price-btn {
+  display: block; text-align: center; padding: 13px; border-radius: 10px;
+  font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: 0.3s;
+  border: none; cursor: pointer; font-family: 'Outfit', sans-serif; width: 100%;
+}
+.price-btn.red { background: var(--red); color: #fff; }
+.price-btn.red:hover { box-shadow: 0 6px 20px var(--red-glow); transform: translateY(-2px); }
+.price-btn.outline { border: 1.5px solid rgba(255,255,255,0.15); color: var(--white); background: transparent; }
+.price-btn.outline:hover { border-color: var(--red); }
+.pricing-note { color: var(--muted); font-size: 0.8rem; margin-top: 24px; }
 
-  /* DEMOS */
-  #demos { background: var(--bg); }
-  .demos-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 56px; }
-  .demos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-  }
-  .demo-card {
-    background: var(--bg3);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 18px; overflow: hidden;
-    transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
-    cursor: pointer;
-    text-decoration: none; color: inherit;
-    display: block;
-  }
-  .demo-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 30px 80px rgba(0,0,0,0.5); border-color: rgba(255,184,0,0.25); }
-  .demo-preview {
-    height: 210px; position: relative; overflow: hidden;
-  }
-  .demo-preview img {
-    width: 100%; height: 100%; object-fit: cover;
-    transition: transform 0.5s;
-  }
-  .demo-card:hover .demo-preview img { transform: scale(1.06); }
-  .demo-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.85) 100%);
-  }
-  .demo-category {
-    position: absolute; top: 14px; left: 14px;
-    background: rgba(0,0,0,0.7); backdrop-filter: blur(10px);
-    border: 1px solid rgba(255,184,0,0.3);
-    padding: 4px 12px; border-radius: 100px;
-    font-size: 0.72rem; font-weight: 600; letter-spacing: 1px;
-    text-transform: uppercase; color: var(--gold);
-  }
-  .demo-view-btn {
-    position: absolute; top: 14px; right: 14px;
-    background: var(--gold); color: #000;
-    padding: 6px 14px; border-radius: 7px;
-    font-size: 0.72rem; font-weight: 700;
-    opacity: 0; transform: translateY(-6px);
-    transition: opacity 0.3s, transform 0.3s;
-  }
-  .demo-card:hover .demo-view-btn { opacity: 1; transform: translateY(0); }
-  .demo-info { padding: 22px 22px 24px; }
-  .demo-info h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
-  .demo-info p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
-  .demo-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
-  .demo-tag {
-    background: rgba(255,255,255,0.06);
-    padding: 3px 10px; border-radius: 100px;
-    font-size: 0.72rem; color: var(--muted);
-  }
+/* =====================================================
+   PORTFOLIO / DEMOS
+===================================================== */
+#portfolio { padding: 100px 5%; background: var(--black2); }
+.portfolio-inner { max-width: 1100px; margin: 0 auto; }
+.portfolio-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 48px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.portfolio-card {
+  border-radius: 16px; overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.35s, box-shadow 0.35s, border-color 0.35s;
+  text-decoration: none; color: inherit; display: block;
+  background: var(--black3);
+}
+.portfolio-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(0,0,0,0.6); border-color: rgba(232,0,13,0.3); }
+.portfolio-preview {
+  height: 200px; position: relative; overflow: hidden;
+  /* ✏️ REPLACE: Set background-image for each card */
+  background: linear-gradient(135deg, #1a0000, #111);
+}
+.portfolio-preview img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.portfolio-card:hover .portfolio-preview img { transform: scale(1.06); }
+.portfolio-preview-placeholder {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px;
+}
+.portfolio-preview-placeholder span { color: rgba(255,255,255,0.2); font-size: 0.75rem; }
+.port-cat {
+  position: absolute; top: 12px; left: 12px;
+  background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);
+  border: 1px solid rgba(232,0,13,0.3); color: var(--red);
+  padding: 3px 12px; border-radius: 100px;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 1px;
+}
+.port-live {
+  position: absolute; top: 12px; right: 12px;
+  background: var(--red); color: #fff;
+  padding: 5px 12px; border-radius: 7px;
+  font-size: 0.7rem; font-weight: 700;
+  opacity: 0; transform: translateY(-4px); transition: 0.3s;
+}
+.portfolio-card:hover .port-live { opacity: 1; transform: translateY(0); }
+.port-info { padding: 20px; }
+.port-info h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+.port-info .port-loc { color: var(--muted); font-size: 0.78rem; margin-bottom: 12px; }
+.port-tags { display: flex; gap: 7px; flex-wrap: wrap; }
+.port-tag { background: rgba(255,255,255,0.05); border: 1px solid var(--border); padding: 3px 10px; border-radius: 100px; font-size: 0.7rem; color: var(--muted); }
 
-  /* PRICING */
-  #pricing { background: var(--bg2); }
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px; margin-top: 60px; align-items: start;
-  }
-  .price-card {
-    background: var(--card);
-    border: 1px solid var(--card-border);
-    border-radius: 20px; padding: 36px 28px;
-    position: relative; transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .price-card:hover { transform: translateY(-6px); }
-  .price-card.popular {
-    background: linear-gradient(135deg, rgba(255,184,0,0.1) 0%, rgba(255,184,0,0.04) 100%);
-    border-color: rgba(255,184,0,0.4);
-    transform: scale(1.03);
-  }
-  .price-card.popular:hover { transform: scale(1.03) translateY(-6px); }
-  .popular-badge {
-    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-    background: var(--gold); color: #000;
-    padding: 4px 18px; border-radius: 100px;
-    font-size: 0.72rem; font-weight: 800; letter-spacing: 1px;
-    white-space: nowrap;
-  }
-  .price-name { font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
-  .price-amount {
-    display: flex; align-items: flex-end; gap: 4px; margin-bottom: 6px;
-  }
-  .price-currency { font-size: 1.6rem; font-weight: 700; color: var(--gold); line-height: 1.2; }
-  .price-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 4rem; line-height: 1; color: var(--white);
-  }
-  .price-desc { color: var(--muted); font-size: 0.85rem; margin-bottom: 28px; }
-  .price-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
-  .price-features li { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; }
-  .price-features li::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
-  .price-features li.dimmed { color: var(--muted); }
-  .price-features li.dimmed::before { content: '✕'; color: rgba(255,255,255,0.2); }
-  .price-btn {
-    display: block; text-align: center;
-    padding: 14px; border-radius: 10px;
-    font-weight: 700; font-size: 0.9rem;
-    text-decoration: none; transition: 0.3s;
-  }
-  .price-btn.solid { background: var(--gold); color: #000; }
-  .price-btn.solid:hover { box-shadow: 0 8px 24px rgba(255,184,0,0.4); transform: translateY(-2px); }
-  .price-btn.outline-gold { border: 1.5px solid var(--gold); color: var(--gold); }
-  .price-btn.outline-gold:hover { background: rgba(255,184,0,0.1); }
+/* =====================================================
+   PROCESS
+===================================================== */
+#process { padding: 100px 5%; background: var(--black); }
+.process-inner { max-width: 1100px; margin: 0 auto; }
+.process-steps {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 56px; position: relative;
+}
+.process-steps::before {
+  content: '';
+  position: absolute; top: 34px; left: 12%; right: 12%; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,0,13,0.4), transparent);
+  z-index: 0;
+}
+.process-step { text-align: center; padding: 0 16px; position: relative; z-index: 1; }
+.step-num {
+  width: 68px; height: 68px; border-radius: 50%;
+  background: var(--black); border: 2px solid rgba(232,0,13,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--red);
+  margin: 0 auto 20px; transition: 0.3s;
+}
+.process-step:hover .step-num { background: var(--red); color: #fff; border-color: var(--red); box-shadow: 0 0 28px var(--red-glow); }
+.process-step h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+.process-step p { color: var(--muted); font-size: 0.83rem; line-height: 1.6; }
 
-  /* WHY US */
-  #why { background: var(--bg); }
-  .why-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 60px; align-items: center; margin-top: 60px;
-  }
-  .why-items { display: flex; flex-direction: column; gap: 28px; }
-  .why-item { display: flex; gap: 18px; }
-  .why-num {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem; color: var(--gold);
-    min-width: 36px; line-height: 1;
-    opacity: 0.6;
-  }
-  .why-text h4 { font-size: 1rem; font-weight: 700; margin-bottom: 6px; }
-  .why-text p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
-  .why-visual {
-    background: var(--bg3);
-    border: 1px solid rgba(255,184,0,0.12);
-    border-radius: 20px; padding: 36px;
-    display: flex; flex-direction: column; gap: 20px;
-  }
-  .metric-row {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-bottom: 16px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-  }
-  .metric-row:last-child { border: none; padding: 0; }
-  .metric-label { font-size: 0.85rem; color: var(--muted); }
-  .metric-value {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem; color: var(--gold); letter-spacing: 1px;
-  }
-  .metric-bar { height: 4px; background: rgba(255,255,255,0.06); border-radius: 10px; margin-top: 8px; overflow: hidden; }
-  .metric-fill { height: 100%; background: var(--gold); border-radius: 10px; animation: fillBar 2s ease 0.5s both; }
-  @keyframes fillBar { from { width: 0 !important; } }
+/* =====================================================
+   OBJECTIONS FAQ
+===================================================== */
+#faq { padding: 100px 5%; background: var(--black2); }
+.faq-inner { max-width: 800px; margin: 0 auto; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; margin-top: 48px; }
+.faq-item {
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden; transition: border-color 0.2s;
+}
+.faq-item.open { border-color: rgba(232,0,13,0.3); }
+.faq-q {
+  padding: 20px 22px; display: flex; align-items: center;
+  justify-content: space-between; cursor: pointer; gap: 16px;
+  font-size: 0.95rem; font-weight: 600;
+}
+.faq-icon {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--red-dim); border: 1px solid rgba(232,0,13,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--red); font-size: 1rem; flex-shrink: 0;
+  transition: transform 0.3s;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  color: var(--muted); font-size: 0.9rem; line-height: 1.7;
+  padding: 0 22px;
+}
+.faq-item.open .faq-a { max-height: 200px; padding: 0 22px 20px; }
 
-  /* PROCESS */
-  #process { background: var(--bg2); }
-  .process-steps {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 0; margin-top: 60px; position: relative;
-  }
-  .process-steps::after {
-    content: '';
-    position: absolute; top: 36px; left: 10%; right: 10%; height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(255,184,0,0.3), transparent);
-  }
-  .process-step { text-align: center; padding: 0 20px; position: relative; z-index: 1; }
-  .step-circle {
-    width: 72px; height: 72px; border-radius: 50%;
-    background: var(--bg); border: 2px solid rgba(255,184,0,0.3);
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 20px;
-    font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--gold);
-    transition: 0.3s; position: relative;
-  }
-  .process-step:hover .step-circle { background: var(--gold); color: #000; border-color: var(--gold); box-shadow: 0 0 30px rgba(255,184,0,0.4); }
-  .process-step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 10px; }
-  .process-step p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+/* =====================================================
+   FOUNDER
+===================================================== */
+#founder { padding: 80px 5%; background: var(--black); }
+.founder-inner {
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 40px; align-items: center;
+  background: var(--black2); border: 1px solid var(--border);
+  border-radius: 20px; padding: 44px 48px;
+  position: relative; overflow: hidden;
+}
+.founder-inner::before {
+  content: '"'; font-family: 'Bebas Neue', sans-serif; font-size: 14rem;
+  color: rgba(232,0,13,0.05); position: absolute;
+  top: -20px; left: 20px; line-height: 1;
+}
+/* ✏️ REPLACE: founder-photo src with your actual photo */
+.founder-photo {
+  width: 110px; height: 110px; border-radius: 50%;
+  background: var(--red-dim); border: 3px solid rgba(232,0,13,0.3);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; flex-shrink: 0; overflow: hidden;
+  /* background-image: url('[YOUR_PHOTO_URL]'); background-size: cover; */
+}
+.founder-content { position: relative; z-index: 1; }
+.founder-content blockquote {
+  font-size: 1.05rem; line-height: 1.75;
+  color: rgba(255,255,255,0.75); margin-bottom: 20px; font-style: italic;
+}
+.founder-name { font-weight: 700; font-size: 0.95rem; color: var(--white); }
+.founder-title { font-size: 0.8rem; color: var(--red); margin-top: 3px; }
 
-  /* CONTACT */
-  #contact {
-    background: var(--bg);
-    background-image: radial-gradient(ellipse 60% 50% at 50% 100%, rgba(255,184,0,0.06) 0%, transparent 60%);
-  }
-  .contact-wrap {
-    max-width: 800px; margin: 0 auto; text-align: center;
-  }
-  .contact-wrap .section-tag { justify-content: center; }
-  .contact-wrap .section-title { margin-bottom: 16px; }
-  .contact-wrap .section-sub { margin: 0 auto 48px; text-align: center; }
+/* =====================================================
+   FINAL CTA SECTION
+===================================================== */
+#final-cta {
+  padding: 100px 5%;
+  background: var(--red);
+  background-image: linear-gradient(135deg, #c40009 0%, #E8000D 50%, #ff1a24 100%);
+  position: relative; overflow: hidden;
+}
+#final-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(0,0,0,0.04) 40px, rgba(0,0,0,0.04) 41px);
+}
+.final-cta-inner { max-width: 900px; margin: 0 auto; text-align: center; position: relative; z-index: 1; }
+.final-cta-inner h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3rem, 6vw, 5.5rem);
+  line-height: 0.9; letter-spacing: 1px; color: #fff; margin-bottom: 18px;
+}
+.final-cta-inner p { font-size: 1.1rem; color: rgba(255,255,255,0.75); margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.final-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-white { background: #fff; color: var(--red); padding: 15px 30px; border-radius: 10px; font-weight: 800; font-size: 0.95rem; text-decoration: none; transition: 0.2s; }
+.btn-white:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+.btn-wa-dark { background: rgba(0,0,0,0.25); color: #fff; border: 2px solid rgba(255,255,255,0.4); padding: 13px 30px; border-radius: 10px; font-weight: 700; font-size: 0.95rem; text-decoration: none; transition: 0.2s; }
+.btn-wa-dark:hover { background: rgba(0,0,0,0.35); }
+.final-urgency { margin-top: 24px; font-size: 0.82rem; color: rgba(255,255,255,0.6); }
 
-  .contact-cards {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 16px; margin-bottom: 48px;
-  }
-  .contact-card {
-    background: var(--card); border: 1px solid var(--card-border);
-    border-radius: 14px; padding: 24px 20px;
-    text-decoration: none; color: var(--white);
-    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    display: flex; flex-direction: column; align-items: center; gap: 10px;
-  }
-  .contact-card:hover { transform: translateY(-4px); border-color: rgba(255,184,0,0.35); box-shadow: 0 15px 40px rgba(0,0,0,0.4); }
-  .contact-card .icon { font-size: 1.8rem; }
-  .contact-card .c-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
-  .contact-card .c-value { font-size: 0.95rem; font-weight: 600; }
+/* =====================================================
+   FOOTER
+===================================================== */
+footer {
+  background: #050505;
+  border-top: 1px solid var(--border);
+  padding: 56px 5% 32px;
+}
+.footer-grid {
+  max-width: 1100px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 48px; margin-bottom: 48px;
+}
+.footer-brand .f-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; letter-spacing: 2px; color: var(--white); text-decoration: none;
+  display: inline-block; margin-bottom: 12px;
+}
+.footer-brand .f-logo span { color: var(--red); }
+.footer-brand p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; max-width: 280px; }
+.footer-brand .f-story { font-style: italic; margin-top: 12px; font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+.footer-col h4 { font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--white); margin-bottom: 16px; }
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-col a { color: var(--muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+.footer-col a:hover { color: var(--red); }
+.footer-contacts { display: flex; flex-direction: column; gap: 12px; }
+.f-contact-item { display: flex; align-items: center; gap: 10px; }
+.f-contact-icon { width: 34px; height: 34px; border-radius: 8px; background: var(--red-dim); border: 1px solid rgba(232,0,13,0.2); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; flex-shrink: 0; }
+.f-contact-text a { color: var(--muted); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.f-contact-text a:hover { color: var(--white); }
+.footer-bottom {
+  max-width: 1100px; margin: 0 auto;
+  border-top: 1px solid var(--border); padding-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 12px;
+}
+.footer-bottom p { color: var(--muted); font-size: 0.8rem; }
+.footer-bottom span { color: var(--red); }
 
-  .whatsapp-cta {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: #25D366; color: #fff;
-    padding: 18px 40px; border-radius: 14px;
-    font-weight: 700; font-size: 1.05rem;
-    text-decoration: none;
-    box-shadow: 0 8px 30px rgba(37,211,102,0.35);
-    transition: transform 0.3s, box-shadow 0.3s;
-    margin-bottom: 20px;
-  }
-  .whatsapp-cta:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 16px 50px rgba(37,211,102,0.45); }
-  .whatsapp-icon { font-size: 1.4rem; }
-  .contact-note { color: var(--muted); font-size: 0.82rem; margin-top: 10px; }
+/* =====================================================
+   STICKY MOBILE WA BUTTON
+===================================================== */
+#sticky-wa {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9000;
+  background: #25D366; padding: 16px 20px;
+  text-align: center;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+}
+#sticky-wa a {
+  color: #fff; text-decoration: none;
+  font-weight: 700; font-size: 1rem;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
 
-  /* FOOTER */
-  footer {
-    background: var(--bg2);
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding: 48px 5% 30px;
-  }
-  .footer-content {
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 24px; margin-bottom: 30px;
-  }
-  .footer-logo {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem; letter-spacing: 2px;
-    text-decoration: none; color: var(--white);
-  }
-  .footer-logo span { color: var(--gold); }
-  .footer-tagline { color: var(--muted); font-size: 0.85rem; margin-top: 4px; }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--gold); }
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.06);
-    padding-top: 20px;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 12px;
-  }
-  .footer-copy { color: var(--muted); font-size: 0.82rem; }
-  .footer-dev { color: var(--muted); font-size: 0.82rem; }
-  .footer-dev span { color: var(--gold); }
+/* =====================================================
+   AI CHATBOT (Gemini)
+===================================================== */
+#sl-chat-btn {
+  position: fixed; bottom: 28px; right: 28px; z-index: 8990;
+  width: 62px; height: 62px; border-radius: 50%;
+  background: var(--red); border: none; cursor: pointer;
+  box-shadow: 0 6px 28px var(--red-glow);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem;
+  animation: chatPop 2.5s ease-in-out infinite;
+}
+@keyframes chatPop {
+  0%,100%{box-shadow:0 6px 28px var(--red-glow)}
+  50%{box-shadow:0 6px 40px rgba(232,0,13,0.55),0 0 0 10px rgba(232,0,13,0.07)}
+}
+#sl-notif {
+  position: fixed; bottom: 104px; right: 28px; z-index: 8991;
+  background: #fff; color: #000;
+  font-size: 0.72rem; font-weight: 700;
+  padding: 6px 14px; border-radius: 100px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3); white-space: nowrap;
+  display: none; font-family: 'Outfit', sans-serif;
+}
+#sl-chat-win {
+  position: fixed; bottom: 104px; right: 28px; z-index: 8989;
+  width: 360px; height: 520px;
+  background: #111; border: 1px solid rgba(232,0,13,0.2);
+  border-radius: 20px; display: flex; flex-direction: column;
+  overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+  transform: scale(0.85) translateY(20px); opacity: 0; pointer-events: none;
+  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
+  font-family: 'Outfit', sans-serif;
+}
+#sl-chat-win.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
+.sl-header { background: rgba(232,0,13,0.1); border-bottom: 1px solid rgba(232,0,13,0.15); padding: 14px 18px; display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.sl-avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--red); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+.sl-hinfo h4 { color: #fff; font-size: 0.9rem; font-weight: 700; }
+.sl-hinfo p { color: rgba(255,255,255,0.4); font-size: 0.7rem; display:flex; align-items:center; gap:5px; margin-top:2px; }
+.sl-online-dot { width:6px; height:6px; background:#00e676; border-radius:50%; box-shadow:0 0 6px #00e676; }
+.sl-close { margin-left: auto; background: none; border: none; color: rgba(255,255,255,0.3); font-size: 1.1rem; cursor: pointer; padding: 4px; transition: color 0.2s; }
+.sl-close:hover { color: #fff; }
+.sl-msgs { flex: 1; overflow-y: auto; padding: 14px 12px; display: flex; flex-direction: column; gap: 10px; scroll-behavior: smooth; }
+.sl-msgs::-webkit-scrollbar { width: 3px; }
+.sl-msgs::-webkit-scrollbar-thumb { background: rgba(232,0,13,0.3); border-radius:10px; }
+.sl-bubble { max-width: 82%; padding: 10px 14px; border-radius: 14px; font-size: 0.83rem; line-height: 1.55; word-break: break-word; animation: bubIn 0.3s ease both; }
+@keyframes bubIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.sl-bubble.bot { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); border-bottom-left-radius: 4px; align-self: flex-start; }
+.sl-bubble.user { background: var(--red); color: #fff; font-weight: 600; border-bottom-right-radius: 4px; align-self: flex-end; }
+.sl-typing { display: flex; gap: 4px; padding: 12px 14px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; border-bottom-left-radius: 4px; align-self: flex-start; align-items: center; }
+.sl-typing span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.4); animation: typDot 1.2s ease-in-out infinite; }
+.sl-typing span:nth-child(2) { animation-delay: 0.2s; }
+.sl-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typDot { 0%,80%,100%{transform:scale(1);opacity:0.4} 40%{transform:scale(1.3);opacity:1} }
+.sl-quick-wrap { padding: 6px 12px 4px; display: flex; gap: 7px; flex-wrap: wrap; flex-shrink: 0; }
+.sl-quick { background: rgba(232,0,13,0.1); border: 1px solid rgba(232,0,13,0.3); color: var(--red); font-size: 0.72rem; font-weight: 600; padding: 5px 12px; border-radius: 100px; cursor: pointer; font-family: 'Outfit',sans-serif; transition: 0.2s; white-space: nowrap; }
+.sl-quick:hover { background: rgba(232,0,13,0.2); }
+.sl-input-bar { padding: 10px 12px; border-top: 1px solid rgba(255,255,255,0.06); display: flex; gap: 8px; align-items: flex-end; flex-shrink: 0; }
+.sl-input-bar textarea { flex: 1; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 10px 14px; color: #fff; font-family: 'Outfit', sans-serif; font-size: 0.83rem; outline: none; resize: none; max-height: 90px; min-height: 40px; line-height: 1.4; transition: border-color 0.2s; }
+.sl-input-bar textarea::placeholder { color: rgba(255,255,255,0.2); }
+.sl-input-bar textarea:focus { border-color: rgba(232,0,13,0.4); }
+.sl-send { width: 40px; height: 40px; border-radius: 50%; background: var(--red); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; transition: transform 0.2s; }
+.sl-send:hover { transform: scale(1.1); }
+.sl-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
+.sl-powered { text-align: center; padding: 6px; font-size: 0.6rem; color: rgba(255,255,255,0.15); flex-shrink: 0; }
+.sl-lead-form { margin: 6px 0; background: rgba(232,0,13,0.06); border: 1px solid rgba(232,0,13,0.2); border-radius: 12px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.sl-lead-form input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 9px 12px; color: #fff; font-family: 'Outfit',sans-serif; font-size: 0.82rem; outline: none; width: 100%; }
+.sl-lead-form input::placeholder { color: rgba(255,255,255,0.25); }
+.sl-lead-btn { background: #25D366; color: #fff; border: none; border-radius: 8px; padding: 10px; font-family: 'Outfit',sans-serif; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; }
 
-  /* MOBILE */
-  @media (max-width: 900px) {
-    .nav-links, .nav-cta { display: none; }
-    .hamburger { display: flex; }
-    .hero-visual { display: none; }
-    .hero-content { max-width: 100%; }
-    .why-grid { grid-template-columns: 1fr; }
-    .process-steps::after { display: none; }
-    .hero-stats { gap: 24px; }
-  }
-  @media (max-width: 600px) {
-    #hero { padding: 100px 5% 50px; }
-    section { padding: 70px 5%; }
-    .hero-btns { flex-direction: column; }
-    .btn-primary, .btn-secondary { justify-content: center; }
-  }
-
-  /* GET STARTED FORM */
-  #getstarted {
-    background: var(--bg2);
-    background-image: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(255,184,0,0.05) 0%, transparent 60%);
-  }
-  .form-wrap { max-width: 780px; margin: 0 auto; }
-  .form-wrap .section-tag { justify-content: center; }
-  .form-wrap .section-title, .form-wrap .section-sub { text-align: center; }
-  .form-wrap .section-sub { margin: 0 auto 48px; }
-
-  /* Step progress */
-  .step-progress {
-    display: flex; align-items: center; justify-content: center;
-    gap: 0; margin-bottom: 48px;
-  }
-  .sp-item {
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
-    position: relative;
-  }
-  .sp-item:not(:last-child)::after {
-    content: '';
-    position: absolute; top: 18px; left: calc(50% + 18px);
-    width: calc(100% - 0px); height: 2px;
-    background: rgba(255,255,255,0.08);
-    z-index: 0; min-width: 40px;
-  }
-  .sp-item.done:not(:last-child)::after { background: var(--gold); }
-  .sp-num {
-    width: 36px; height: 36px; border-radius: 50%;
-    border: 2px solid rgba(255,255,255,0.12);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.8rem; font-weight: 700; color: var(--muted);
-    background: var(--bg); position: relative; z-index: 1;
-    transition: 0.3s;
-  }
-  .sp-item.active .sp-num { border-color: var(--gold); color: var(--gold); box-shadow: 0 0 16px rgba(255,184,0,0.3); }
-  .sp-item.done .sp-num { background: var(--gold); border-color: var(--gold); color: #000; }
-  .sp-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.5px; color: var(--muted); white-space: nowrap; }
-  .sp-item.active .sp-label { color: var(--gold); }
-  .sp-item.done .sp-label { color: var(--white); }
-
-  /* Form steps */
-  .form-step { display: none; animation: stepIn 0.4s ease both; }
-  .form-step.active { display: block; }
-  @keyframes stepIn { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }
-
-  .step-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.8rem; letter-spacing: 1px;
-    margin-bottom: 6px; color: var(--white);
-  }
-  .step-title span { color: var(--gold); }
-  .step-desc { color: var(--muted); font-size: 0.88rem; margin-bottom: 28px; }
-
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-  .form-row.single { grid-template-columns: 1fr; }
-  .form-row.triple { grid-template-columns: 1fr 1fr 1fr; }
-
-  .field { display: flex; flex-direction: column; gap: 7px; }
-  .field label {
-    font-size: 0.78rem; font-weight: 600;
-    letter-spacing: 0.5px; color: var(--muted);
-    text-transform: uppercase;
-  }
-  .field label span { color: var(--gold); }
-  .field input, .field select, .field textarea {
-    background: rgba(255,255,255,0.04);
-    border: 1.5px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 12px 16px;
-    color: var(--white);
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.92rem;
-    transition: border-color 0.2s, box-shadow 0.2s;
-    outline: none;
-    width: 100%;
-  }
-  .field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.2); }
-  .field input:focus, .field select:focus, .field textarea:focus {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 3px rgba(255,184,0,0.1);
-    background: rgba(255,184,0,0.04);
-  }
-  .field select { appearance: none; cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23FFB800' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-  .field select option { background: #1a1a2e; color: var(--white); }
-  .field textarea { resize: vertical; min-height: 90px; }
-
-  /* Chip selects */
-  .chip-group { display: flex; flex-wrap: wrap; gap: 10px; }
-  .chip {
-    padding: 8px 16px; border-radius: 100px;
-    border: 1.5px solid rgba(255,255,255,0.1);
-    font-size: 0.82rem; font-weight: 500;
-    cursor: pointer; transition: 0.2s;
-    color: var(--muted); user-select: none;
-    background: rgba(255,255,255,0.03);
-  }
-  .chip:hover { border-color: rgba(255,184,0,0.4); color: var(--white); }
-  .chip.selected { background: rgba(255,184,0,0.15); border-color: var(--gold); color: var(--gold); font-weight: 600; }
-
-  /* Plan cards inside form */
-  .plan-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 14px; }
-  .plan-card {
-    border: 1.5px solid rgba(255,255,255,0.08);
-    border-radius: 14px; padding: 20px 16px;
-    cursor: pointer; transition: 0.25s; text-align: center;
-    background: rgba(255,255,255,0.02);
-  }
-  .plan-card:hover { border-color: rgba(255,184,0,0.3); }
-  .plan-card.selected { border-color: var(--gold); background: rgba(255,184,0,0.1); }
-  .plan-card .plan-name { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; }
-  .plan-card .plan-price { font-family: 'Bebas Neue',sans-serif; font-size: 1.6rem; color: var(--gold); letter-spacing: 1px; }
-  .plan-card .plan-note { font-size: 0.72rem; color: var(--muted); margin-top: 4px; }
-
-  /* Nav buttons */
-  .form-nav {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-top: 32px; flex-wrap: wrap; gap: 12px;
-  }
-  .btn-back {
-    background: transparent; border: 1.5px solid rgba(255,255,255,0.12);
-    color: var(--muted); padding: 12px 28px; border-radius: 10px;
-    font-family: 'Outfit',sans-serif; font-size: 0.92rem; font-weight: 600;
-    cursor: pointer; transition: 0.2s;
-  }
-  .btn-back:hover { border-color: rgba(255,255,255,0.3); color: var(--white); }
-  .btn-next {
-    background: var(--gold); color: #000;
-    padding: 13px 32px; border-radius: 10px;
-    font-family: 'Outfit',sans-serif; font-size: 0.95rem; font-weight: 700;
-    border: none; cursor: pointer; transition: 0.2s;
-    display: flex; align-items: center; gap: 8px;
-  }
-  .btn-next:hover { box-shadow: 0 8px 24px rgba(255,184,0,0.4); transform: translateY(-2px); }
-  .btn-whatsapp {
-    background: #25D366; color: #fff;
-    padding: 14px 32px; border-radius: 10px;
-    font-family: 'Outfit',sans-serif; font-size: 1rem; font-weight: 700;
-    border: none; cursor: pointer; transition: 0.2s;
-    display: flex; align-items: center; gap: 10px; flex: 1; justify-content: center;
-  }
-  .btn-whatsapp:hover { box-shadow: 0 8px 28px rgba(37,211,102,0.4); transform: translateY(-2px); }
-
-  .form-card {
-    background: rgba(255,255,255,0.025);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 20px; padding: 36px 36px 28px;
-  }
-  .step-counter {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.72rem; color: var(--muted); margin-bottom: 20px;
-    display: flex; align-items: center; gap: 10px;
-  }
-  .step-counter span { color: var(--gold); font-weight: 700; }
-
-  /* Summary box */
-  .summary-box {
-    background: rgba(255,184,0,0.05);
-    border: 1px solid rgba(255,184,0,0.2);
-    border-radius: 14px; padding: 24px;
-    margin-bottom: 20px; font-size: 0.85rem; line-height: 1.9;
-    color: var(--muted); max-height: 260px; overflow-y: auto;
-    font-family: 'Space Mono', monospace;
-  }
-  .summary-box strong { color: var(--gold); }
-
-  .required-note { font-size: 0.75rem; color: var(--muted); margin-top: 16px; }
-  .required-note span { color: var(--gold); }
-
-  @media (max-width: 600px) {
-    .form-row { grid-template-columns: 1fr; }
-    .form-row.triple { grid-template-columns: 1fr 1fr; }
-    .plan-cards { grid-template-columns: 1fr; }
-    .form-card { padding: 24px 18px 20px; }
-    .sp-label { display: none; }
-    .sp-item:not(:last-child)::after { min-width: 28px; }
-  }
-
-  /* MOBILE MENU */
-  .mobile-menu {
-    position: fixed; inset: 0; z-index: 90;
-    background: rgba(7,7,15,0.98); backdrop-filter: blur(20px);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center; gap: 36px;
-    transform: translateX(100%); transition: transform 0.4s ease;
-  }
-  .mobile-menu.open { transform: translateX(0); }
-  .mobile-menu a {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.5rem; letter-spacing: 3px;
-    color: var(--white); text-decoration: none;
-    transition: color 0.2s;
-  }
-  .mobile-menu a:hover { color: var(--gold); }
-  .mobile-close {
-    position: absolute; top: 24px; right: 5%;
-    font-size: 1.5rem; cursor: pointer; color: var(--muted);
-    background: none; border: none; color: var(--white);
-  }
+/* RESPONSIVE */
+@media (max-width: 960px) {
+  #hero { grid-template-columns: 1fr; padding: 80px 5% 60px; }
+  .hero-right { display: none; }
+  .hero-h1 { font-size: clamp(3.2rem,10vw,5rem); }
+  .demo-offer-inner { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .process-steps::before { display: none; }
+  .founder-inner { grid-template-columns: 1fr; text-align: center; }
+  .founder-photo { margin: 0 auto; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  #sticky-wa { display: block; }
+  #sl-chat-btn { bottom: 90px; }
+  #sl-chat-win { bottom: 156px; }
+  #sl-notif { bottom: 170px; }
+}
+@media (max-width: 600px) {
+  .trust-bar-grid { gap: 24px; }
+  .hero-btns { flex-direction: column; }
+  .process-steps { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .final-btns { flex-direction: column; align-items: center; }
+  #sl-chat-win { width: calc(100vw - 20px); right: 10px; }
+}
 </style>
 </head>
 <body>
 
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
-
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" onclick="toggleMenu()">✕</button>
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#demos" onclick="toggleMenu()">Demos</a>
-  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
-  <a href="#why" onclick="toggleMenu()">Why Us</a>
-  <a href="#getstarted" onclick="toggleMenu()">Get Started</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <button class="mobile-close" onclick="closeMobileMenu()">✕</button>
+  <a href="#demo-offer" onclick="closeMobileMenu()">Free Demo</a>
+  <a href="#pricing" onclick="closeMobileMenu()">Pricing</a>
+  <a href="#portfolio" onclick="closeMobileMenu()">Work</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="#contact-footer" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- ANNOUNCEMENT BAR -->
+<div id="announce">
+  🔥 Limited demo slots available this week
+  <span>•</span>
+  Get your gym website in 48 hours — Pay only if you like it
+  <span>•</span>
+  <strong>Starting ₹999</strong>
 </div>
 
 <!-- NAV -->
-<nav id="navbar">
+<nav>
   <a href="#hero" class="nav-logo">Site<span>Lab</span> India</a>
   <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#demos">Demos</a></li>
+    <li><a href="#demo-offer">Free Demo</a></li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#why">Why Us</a></li>
-    <li><a href="#getstarted">Get Started</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#portfolio">Work</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="https://wa.me/919460722862?text=Hi%20Kapil%2C%20I%20want%20a%20website%20for%20my%20business!" target="_blank" class="nav-cta">Get Your Site →</a>
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
+  <!-- ✏️ REPLACE: WhatsApp number if needed -->
+  <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20want%20a%20free%20gym%20website%20demo." target="_blank" class="nav-cta">Get Free Demo →</a>
+  <button class="hamburger" onclick="openMobileMenu()"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="floating-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-  </div>
+<!-- BACKGROUND -->
+<div class="hero-bg"></div>
+<div class="hero-grid-lines"></div>
 
-  <div class="hero-content">
-    <div class="hero-badge">
-      <span class="dot"></span> Open for new clients
+<!-- =====================================================
+     HERO SECTION
+===================================================== -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">
+      <span class="pulse"></span>
+      Built exclusively for gym owners
     </div>
 
-    <h1 class="hero-title">
-      Your Business
-      <span class="accent">Online</span>
-      <span class="stroke">In 24 Hrs</span>
+    <h1 class="hero-h1">
+      GET MORE<br>
+      GYM <span class="red">MEMBERS</span><br>
+      <span class="stroke">WITH A</span><br>
+      HIGH-CONVERTING<br>
+      <span class="red">WEBSITE</span>
     </h1>
 
     <p class="hero-sub">
-      Professional micro-websites for <strong>small businesses</strong>. Clean, fast &amp; mobile-ready. <strong>Starting at just ₹999</strong> — no hidden charges, no delays.
+      See your gym website demo in <strong>48 hours</strong>.
+      Pay <strong>only if you like it</strong>.
+      WhatsApp lead system included — built to get you more walk-ins.
     </p>
 
     <div class="hero-btns">
-      <a href="https://wa.me/919460722862?text=Hi%20Kapil%2C%20I%20want%20a%20website%20for%20my%20business!%20Please%20share%20more%20details." target="_blank" class="btn-primary">
-        💬 Chat on WhatsApp
-      </a>
-      <a href="#demos" class="btn-secondary">View Live Demos →</a>
+      <a href="#demo-offer" class="btn-red">🚀 Get Free Demo</a>
+      <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20want%20a%20free%20gym%20website%20demo." target="_blank" class="btn-wa">💬 Chat on WhatsApp</a>
     </div>
 
-    <div class="hero-stats">
-      <div class="stat-item">
-        <div class="stat-num">24H</div>
-        <div class="stat-label">Delivery Time</div>
+    <div class="hero-urgency">
+      <span class="dot"></span>
+      &nbsp;Limited demo slots available this week — only a few left
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-item">
+        <div class="trust-num">48H</div>
+        <div class="trust-label">Demo Delivery</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">₹999</div>
-        <div class="stat-label">Starting Price</div>
+      <div class="trust-item">
+        <div class="trust-num">₹0</div>
+        <div class="trust-label">Upfront Cost</div>
       </div>
-      <div class="stat-item">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Mobile Ready</div>
+      <div class="trust-item">
+        <div class="trust-num">100%</div>
+        <div class="trust-label">Mobile Ready</div>
       </div>
     </div>
   </div>
 
-  <div class="hero-visual">
-    <div class="browser-mock">
-      <div class="browser-bar">
-        <div class="browser-dots">
-          <span></span><span></span><span></span>
+  <div class="hero-right">
+    <div class="phone-wrap">
+      <div class="phone-glow"></div>
+      <div class="phone-frame">
+        <div class="phone-notch"><div class="phone-notch-inner"></div></div>
+        <div class="phone-screen">
+          <div class="phone-mock-badge">⚡ LIVE GYM WEBSITE</div>
+          <div class="phone-mock-logo">IRON <span>ZONE</span><br>FITNESS</div>
+          <div class="phone-mock-tagline">Train Hard · Live Strong · Kota</div>
+          <div class="phone-mock-img">
+            <!-- ✏️ REPLACE: Add style="background-image:url('YOUR_GYM_IMAGE')" -->
+            <span>[ Your Gym Photo Here ]</span>
+          </div>
+          <div class="phone-mock-btn">💬 WhatsApp Us for Membership</div>
         </div>
-        <div class="browser-url">myshop.sitelabindia.com</div>
       </div>
-      <div class="browser-content">
-        <div class="mock-grid-lines"></div>
-        <div class="mock-glow"></div>
-        <div class="mock-badge-pill">✦ LIVE WEBSITE</div>
-        <div class="mock-hero-text">GROW YOUR<br><span>BUSINESS</span><br>ONLINE</div>
-        <div class="mock-cta-bar">
-          <div class="mock-btn gold">Get Started</div>
-          <div class="mock-btn outline">Learn More</div>
+      <div class="phone-float-1">
+        <div class="float-icon">🏋️</div>
+        <div class="float-text">
+          <h5>New Enquiry!</h5>
+          <p>via your website</p>
+        </div>
+      </div>
+      <div class="phone-float-2">
+        <div class="float-icon">⚡</div>
+        <div class="float-text">
+          <h5>48hr Delivery</h5>
+          <p>Zero upfront cost</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee-section">
-  <div class="marquee-track">
-    <div class="marquee-item">WEB DESIGN</div>
-    <div class="marquee-item">FAST DELIVERY</div>
-    <div class="marquee-item">MOBILE FRIENDLY</div>
-    <div class="marquee-item">AFFORDABLE</div>
-    <div class="marquee-item">SMALL BUSINESSES</div>
-    <div class="marquee-item">MICRO WEBSITES</div>
-    <div class="marquee-item">WEB DESIGN</div>
-    <div class="marquee-item">FAST DELIVERY</div>
-    <div class="marquee-item">MOBILE FRIENDLY</div>
-    <div class="marquee-item">AFFORDABLE</div>
-    <div class="marquee-item">SMALL BUSINESSES</div>
-    <div class="marquee-item">MICRO WEBSITES</div>
+<!-- =====================================================
+     TRUST BAR
+===================================================== -->
+<div id="trust-bar">
+  <div class="trust-bar-grid">
+    <div class="tb-item">
+      <div class="tb-icon">🏋️</div>
+      <div class="tb-text">
+        <h4>Built for Indian Gym Owners</h4>
+        <p>Designed specifically for fitness businesses</p>
+      </div>
+    </div>
+    <div class="tb-item">
+      <div class="tb-icon">⚡</div>
+      <div class="tb-text">
+        <h4>48-Hour Delivery</h4>
+        <p>Fast turnaround, no waiting weeks</p>
+      </div>
+    </div>
+    <div class="tb-item">
+      <div class="tb-icon">💬</div>
+      <div class="tb-text">
+        <h4>WhatsApp Lead System</h4>
+        <p>Every visitor becomes a potential member</p>
+      </div>
+    </div>
+    <div class="tb-item">
+      <div class="tb-icon">📈</div>
+      <div class="tb-text">
+        <h4>Focused on Real Growth</h4>
+        <p>More walk-ins, more members, more revenue</p>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-tag">What We Do</div>
-  <h2 class="section-title">Web Solutions<br>Built for Growth</h2>
-  <p class="section-sub">Everything your small business needs to look professional and get found online.</p>
+<!-- =====================================================
+     FREE DEMO OFFER
+===================================================== -->
+<section id="demo-offer">
+  <div class="demo-offer-inner">
+    <div class="demo-offer-left reveal">
+      <div class="section-tag">Zero Risk Offer</div>
+      <h2 class="section-title">See Your Gym Website<br><span>Before You Pay</span></h2>
+      <p class="section-sub">We design a custom demo for your gym — for free. You only pay when you love it.</p>
 
-  <div class="services-grid">
-    <div class="service-card reveal">
-      <div class="service-icon">🚀</div>
-      <h3>1-Page Micro Website</h3>
-      <p>A stunning single-page website that showcases your business perfectly. Fast-loading, mobile-first, and designed to convert visitors into customers.</p>
+      <div class="demo-points">
+        <div class="demo-point">
+          <div class="demo-point-icon">💳</div>
+          <div class="demo-point-text">
+            <h4>Zero Upfront Payment</h4>
+            <p>No credit card, no advance. We build the demo completely free.</p>
+          </div>
+        </div>
+        <div class="demo-point">
+          <div class="demo-point-icon">🎨</div>
+          <div class="demo-point-text">
+            <h4>Custom Design for Your Gym</h4>
+            <p>Not a template — designed with your gym name, colors, and content.</p>
+          </div>
+        </div>
+        <div class="demo-point">
+          <div class="demo-point-icon">⏱️</div>
+          <div class="demo-point-text">
+            <h4>Delivered in 48 Hours</h4>
+            <p>You share your details today, see your website demo in 2 days.</p>
+          </div>
+        </div>
+        <div class="demo-point">
+          <div class="demo-point-icon">📲</div>
+          <div class="demo-point-text">
+            <h4>Designed to Get You Leads</h4>
+            <p>WhatsApp buttons, enquiry forms, mobile-first — built to convert.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-warning">
+        <span>⚠️</span>
+        <span><span>Note:</span> The free demo is a preview only. Full live website goes live only after your approval and payment.</span>
+      </div>
     </div>
-    <div class="service-card reveal">
-      <div class="service-icon">📱</div>
-      <h3>Mobile-First Design</h3>
-      <p>Every site we build looks perfect on phones, tablets and desktops. Your customers browse on mobile — your site will shine on every screen.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">⚡</div>
-      <h3>Lightning Fast Load</h3>
-      <p>Slow sites lose customers. All our websites are optimized for speed — no bloated plugins, no lag, just clean code that loads in seconds.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">💬</div>
-      <h3>WhatsApp Integration</h3>
-      <p>One-click WhatsApp contact buttons built right into your site. Let customers reach you instantly without any friction.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🌐</div>
-      <h3>Domain Registration</h3>
-      <p>Get your own professional domain name like yourbusiness.com. Domain registration available starting at ₹1,999/year.</p>
-    </div>
-    <div class="service-card reveal">
-      <div class="service-icon">🎨</div>
-      <h3>Custom Branding</h3>
-      <p>Your colors, your fonts, your vibe. Every website is built to match your brand identity and stand out from the competition.</p>
+
+    <div class="demo-offer-right reveal">
+      <!-- SLOT AVAILABILITY -->
+      <div class="slots-badge">
+        <div class="slots-pips">
+          <div class="slot-pip"></div>
+          <div class="slot-pip"></div>
+          <div class="slot-pip taken"></div>
+          <div class="slot-pip taken"></div>
+          <div class="slot-pip taken"></div>
+        </div>
+        <div class="slots-text"><strong>2 slots left</strong> this week</div>
+      </div>
+
+      <div class="demo-form-title">Request Free Demo</div>
+      <p class="demo-form-sub">Fill this — we'll WhatsApp your demo in 48 hrs ⚡</p>
+
+      <div class="form-field">
+        <label>Your Name <span>*</span></label>
+        <input type="text" id="lead-name" placeholder="e.g. Ramesh Kumar" />
+      </div>
+      <div class="form-field">
+        <label>WhatsApp Number <span>*</span></label>
+        <input type="tel" id="lead-phone" placeholder="e.g. 9876543210" maxlength="10" />
+      </div>
+      <div class="form-field">
+        <label>Gym Name <span>*</span></label>
+        <input type="text" id="lead-gym" placeholder="e.g. Power Zone Gym" />
+      </div>
+      <div class="form-field">
+        <label>City <span>*</span></label>
+        <input type="text" id="lead-city" placeholder="e.g. Kota, Rajasthan" />
+      </div>
+
+      <button class="form-submit" onclick="submitLead()">
+        🚀 Request My Free Demo
+      </button>
+      <p class="form-note">✅ Free. No payment. No spam. 100% confidential.</p>
     </div>
   </div>
 </section>
 
-<!-- DEMOS -->
-<section id="demos">
-  <div class="demos-header">
-    <div>
-      <div class="section-tag">Live Demos</div>
-      <h2 class="section-title">See What We Build</h2>
-      <p class="section-sub">Real website samples for real businesses — just like yours.</p>
+<!-- =====================================================
+     BENEFITS
+===================================================== -->
+<section id="benefits">
+  <div class="container">
+    <div style="text-align:center">
+      <div class="section-tag" style="justify-content:center">What You Get</div>
+      <h2 class="section-title">What Your Website<br>Does for Your Gym</h2>
+      <p class="section-sub" style="max-width:500px;margin:0 auto">Not just a pretty page — a client-getting machine that works 24/7.</p>
     </div>
-    <a href="https://wa.me/919460722862?text=Hi%20Kapil%2C%20I%20saw%20your%20demos%20and%20I%27m%20interested%20in%20a%20website%20for%20my%20business!" target="_blank" class="btn-primary" style="height:fit-content">Request Custom Demo →</a>
+
+    <div class="benefits-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📲</div>
+        <h3>More WhatsApp Enquiries</h3>
+        <p>Every visitor sees a prominent WhatsApp button. They tap, they message you, they join. Frictionless conversion.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📱</div>
+        <h3>Boost Instagram Followers</h3>
+        <p>Website links to your Instagram. Visitors become followers. Followers become members. Growth flywheel starts.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🏆</div>
+        <h3>Build Local Trust Fast</h3>
+        <p>A professional website makes you look established. New members choose you over the gym next door.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">🗺️</div>
+        <h3>Stand Out in Your Area</h3>
+        <p>Most local gyms have no website. You'll be the only one who shows up on Google when someone searches nearby.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">⚡</div>
+        <h3>Convert Visitors to Members</h3>
+        <p>Membership plans, pricing, free trial CTA, photos of your gym — everything a visitor needs to say yes.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-icon">📍</div>
+        <h3>Google Maps Integration</h3>
+        <p>Your location embedded directly. New members can find you in one tap. No confusion, no lost walk-ins.</p>
+      </div>
+    </div>
+
+    <div class="benefits-cta">
+      <a href="#demo-offer" class="btn-red">Get My Free Gym Demo →</a>
+    </div>
   </div>
-
-  <div class="demos-grid">
-
-    <!-- GYM DEMO -->
-    <a href="https://mr-yadav00.github.io/YadavFitnessClub/" target="_blank" class="demo-card reveal">
-      <div class="demo-preview">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Yadav Fitness Club Demo">
-        <div class="demo-overlay"></div>
-        <div class="demo-category">🏋️ Fitness</div>
-        <div class="demo-view-btn">View Demo ↗</div>
-      </div>
-      <div class="demo-info">
-        <h3>Yadav Fitness Club</h3>
-        <p style="color:var(--muted);font-size:0.78rem;margin-bottom:6px">📍 Jwahar Nagar, Kota</p>
-        <p>High-energy gym landing page with membership plans, timings, trainer section and a direct WhatsApp enquiry button.</p>
-        <div class="demo-tags">
-          <span class="demo-tag">1-Page</span>
-          <span class="demo-tag">Mobile Ready</span>
-          <span class="demo-tag">WhatsApp CTA</span>
-          <span class="demo-tag">Dark Theme</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- HOSTEL DEMO -->
-    <a href="https://mr-yadav00.github.io/Radha-Raman-Residency/" target="_blank" class="demo-card reveal">
-      <div class="demo-preview">
-        <img src="https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&q=80" alt="Radha Raman Residency Demo">
-        <div class="demo-overlay"></div>
-        <div class="demo-category">🏠 Residency</div>
-        <div class="demo-view-btn">View Demo ↗</div>
-      </div>
-      <div class="demo-info">
-        <h3>Radha Raman Residency</h3>
-        <p style="color:var(--muted);font-size:0.78rem;margin-bottom:6px">📍 Premium Student Living, Kota</p>
-        <p>Clean, trustworthy residency site with room gallery, amenities list, pricing details and direct contact CTA.</p>
-        <div class="demo-tags">
-          <span class="demo-tag">1-Page</span>
-          <span class="demo-tag">Gallery</span>
-          <span class="demo-tag">Pricing Table</span>
-          <span class="demo-tag">Light Theme</span>
-        </div>
-      </div>
-    </a>
-
-    <!-- REAL ESTATE DEMO -->
-    <a href="https://mr-yadav00.github.io/Lekhraj-contractor-/" target="_blank" class="demo-card reveal">
-      <div class="demo-preview">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=80" alt="Lekhraj Contractor Real Estate Demo">
-        <div class="demo-overlay"></div>
-        <div class="demo-category">🏗️ Real Estate</div>
-        <div class="demo-view-btn">View Demo ↗</div>
-      </div>
-      <div class="demo-info">
-        <h3>Lekhraj Contractor</h3>
-        <p style="color:var(--muted);font-size:0.78rem;margin-bottom:6px">📍 Precast Boundary Wall & Real Estate, Kota</p>
-        <p>Premium contractor & real estate showcase with project highlights, services overview and a direct enquiry button.</p>
-        <div class="demo-tags">
-          <span class="demo-tag">1-Page</span>
-          <span class="demo-tag">Project Gallery</span>
-          <span class="demo-tag">Enquiry Form</span>
-          <span class="demo-tag">Premium Look</span>
-        </div>
-      </div>
-    </a>
-
-  </div>
-
-  <p style="text-align:center; color:var(--muted); font-size:0.82rem; margin-top:30px;">💡 <em>Click any card to view the live demo website.</em></p>
 </section>
 
-<!-- PRICING -->
+<!-- =====================================================
+     PRICING
+===================================================== -->
 <section id="pricing">
-  <div style="text-align:center">
+  <div class="pricing-inner">
     <div class="section-tag" style="justify-content:center">Pricing</div>
-    <h2 class="section-title">Simple, Honest Pricing</h2>
-    <p class="section-sub" style="margin:0 auto">No hidden charges. No surprises. Just a great website at an affordable price.</p>
-  </div>
+    <h2 class="section-title">Simple. Honest. No Surprises.</h2>
+    <p class="section-sub" style="max-width:480px;margin:0 auto">Pay only after you approve your demo. Choose the plan that fits your gym.</p>
 
-  <div class="pricing-grid">
+    <div class="pricing-grid">
 
-    <!-- STARTER -->
-    <div class="price-card reveal">
-      <div class="price-name">Starter</div>
-      <div class="price-amount">
-        <span class="price-currency">₹</span>
-        <span class="price-num">999</span>
+      <!-- STARTER -->
+      <div class="price-card reveal">
+        <div class="price-plan-name">Starter</div>
+        <div class="price-amount">
+          <span class="price-rs">₹</span>
+          <span class="price-num">999</span>
+        </div>
+        <p class="price-desc">Get online fast, no fuss</p>
+        <ul class="price-list">
+          <li>1–2 Page Professional Website</li>
+          <li>Mobile Responsive Design</li>
+          <li>WhatsApp Contact Button</li>
+          <li>Basic SEO Setup</li>
+          <li>Delivered in 24–48 Hours</li>
+          <li>1 Month Support</li>
+          <li class="no">Hosting Not Included</li>
+          <li class="no">Extra Revisions Chargeable</li>
+        </ul>
+        <!-- ✏️ REPLACE: WhatsApp number in all plan links -->
+        <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%27m%20interested%20in%20the%20Starter%20Plan%20(%E2%82%B9999)%20for%20my%20gym." target="_blank" class="price-btn outline">Get Started →</a>
       </div>
-      <p class="price-desc">Perfect for getting your business online fast</p>
-      <ul class="price-features">
-        <li>1-Page Professional Website</li>
-        <li>Mobile Responsive Design</li>
-        <li>WhatsApp Contact Button</li>
-        <li>Fast Loading Speed</li>
-        <li>Basic SEO Setup</li>
-        <li>Ready in 24 Hours</li>
-        <li class="dimmed">Custom Domain (not included)</li>
-        <li class="dimmed">Logo Design</li>
-      </ul>
-      <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%27m%20interested%20in%20the%20Starter%20Plan%20(%E2%82%B9999).%20Please%20share%20more%20details." target="_blank" class="price-btn outline-gold">Get Started →</a>
+
+      <!-- GROWTH — POPULAR -->
+      <div class="price-card popular reveal">
+        <div class="popular-tag">⭐ MOST POPULAR</div>
+        <div class="price-plan-name">Growth</div>
+        <div class="price-label">Best Value</div>
+        <div class="price-amount">
+          <span class="price-rs">₹</span>
+          <span class="price-num">1999</span>
+        </div>
+        <p class="price-desc">Everything you need to grow</p>
+        <ul class="price-list">
+          <li>2–3 Page Website</li>
+          <li>Hosting Included (1 Year)</li>
+          <li>WhatsApp + Enquiry Form</li>
+          <li>Google Maps Integration</li>
+          <li>Photo Gallery Section</li>
+          <li>Membership Plans Section</li>
+          <li>Delivered in 2–3 Days</li>
+          <li>6 Months Support + 1 Month Revisions</li>
+        </ul>
+        <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%27m%20interested%20in%20the%20Growth%20Plan%20(%E2%82%B91999)%20for%20my%20gym." target="_blank" class="price-btn red">Get This Plan →</a>
+      </div>
+
+      <!-- PRO -->
+      <div class="price-card reveal">
+        <div class="price-plan-name">Pro</div>
+        <div class="price-label">Most Chosen</div>
+        <div class="price-amount">
+          <span class="price-rs">₹</span>
+          <span class="price-num">2999</span>
+        </div>
+        <p class="price-desc">Full package, premium result</p>
+        <ul class="price-list">
+          <li>3–4 Page Premium Website</li>
+          <li>Domain + Hosting Included</li>
+          <li>Custom Branding & Logo</li>
+          <li>Instagram Feed Integration</li>
+          <li>Trainer Profiles Section</li>
+          <li>Testimonials & Reviews</li>
+          <li>Delivered in 2–3 Days</li>
+          <li>1 Year Support + 2 Months Revisions</li>
+        </ul>
+        <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%27m%20interested%20in%20the%20Pro%20Plan%20(%E2%82%B92999)%20for%20my%20gym." target="_blank" class="price-btn outline">Get Pro →</a>
+      </div>
+
     </div>
-
-    <!-- POPULAR -->
-    <div class="price-card popular reveal">
-      <div class="popular-badge">⭐ MOST POPULAR</div>
-      <div class="price-name">Growth</div>
-      <div class="price-amount">
-        <span class="price-currency">₹</span>
-        <span class="price-num">2998</span>
-      </div>
-      <p class="price-desc">Website + your own domain name included</p>
-      <ul class="price-features">
-        <li>Everything in Starter</li>
-        <li>Domain Registration (1 Year)</li>
-        <li>Professional Email Setup</li>
-        <li>Google Maps Integration</li>
-        <li>Social Media Links</li>
-        <li>Photo Gallery Section</li>
-        <li>Ready in 24 Hours</li>
-        <li>Free Minor Revisions</li>
-      </ul>
-      <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%27m%20interested%20in%20the%20Growth%20Plan%20(%E2%82%B92998).%20Please%20share%20more%20details." target="_blank" class="price-btn solid">Get This Plan →</a>
-    </div>
-
-    <!-- CUSTOM -->
-    <div class="price-card reveal">
-      <div class="price-name">Custom</div>
-      <div class="price-amount">
-        <span class="price-currency" style="font-size:1.1rem; line-height:1.5; color:var(--muted)">Let's Talk</span>
-      </div>
-      <p class="price-desc">Tailored solution for your unique business needs</p>
-      <ul class="price-features">
-        <li>Multi-Section Design</li>
-        <li>Custom Animations</li>
-        <li>Contact / Enquiry Form</li>
-        <li>Instagram Feed Embed</li>
-        <li>Custom Logo Design</li>
-        <li>Priority Support</li>
-        <li>Ongoing Maintenance</li>
-        <li>Everything You Need</li>
-      </ul>
-      <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20need%20a%20custom%20website%20solution.%20Can%20we%20discuss%20my%20requirements?" target="_blank" class="price-btn outline-gold">Discuss My Needs →</a>
-    </div>
-
-  </div>
-
-  <p style="text-align:center; color:var(--muted); font-size:0.83rem; margin-top:28px;">* Domain charges: ₹1,999/year (optional). Prices inclusive of design + development. Hosting guidance provided.</p>
-</section>
-
-<!-- WHY US -->
-<section id="why">
-  <div class="why-grid">
-    <div>
-      <div class="section-tag">Why SiteLab</div>
-      <h2 class="section-title">Why Small Businesses<br>Trust Us</h2>
-      <p class="section-sub">We specialize in exactly one thing — making small businesses look big online, quickly and affordably.</p>
-
-      <div class="why-items" style="margin-top:40px">
-        <div class="why-item reveal">
-          <div class="why-num">01</div>
-          <div class="why-text">
-            <h4>Delivered in 24 Hours</h4>
-            <p>No waiting for weeks. Share your details today, get your website tomorrow. Fast without compromising quality.</p>
-          </div>
-        </div>
-        <div class="why-item reveal">
-          <div class="why-num">02</div>
-          <div class="why-text">
-            <h4>Built for Your Industry</h4>
-            <p>Gym, hostel, salon, clinic, restaurant — we've built for them all. You get a design that actually fits your business.</p>
-          </div>
-        </div>
-        <div class="why-item reveal">
-          <div class="why-num">03</div>
-          <div class="why-text">
-            <h4>Direct WhatsApp Support</h4>
-            <p>No ticket systems or chatbots. You talk directly to Kapil — the person building your site — via WhatsApp.</p>
-          </div>
-        </div>
-        <div class="why-item reveal">
-          <div class="why-num">04</div>
-          <div class="why-text">
-            <h4>Honest Pricing, No Surprises</h4>
-            <p>₹999 means ₹999. Everything is transparent upfront. No hidden fees, no upsell traps.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="why-visual reveal">
-      <h3 style="font-size:0.8rem; letter-spacing:2px; text-transform:uppercase; color:var(--muted); margin-bottom:8px">Our Promise</h3>
-      <div class="metric-row">
-        <div>
-          <div class="metric-label">Delivery Speed</div>
-          <div class="metric-bar"><div class="metric-fill" style="width:95%"></div></div>
-        </div>
-        <div class="metric-value">24H</div>
-      </div>
-      <div class="metric-row">
-        <div>
-          <div class="metric-label">Mobile Performance</div>
-          <div class="metric-bar"><div class="metric-fill" style="width:98%"></div></div>
-        </div>
-        <div class="metric-value">98%</div>
-      </div>
-      <div class="metric-row">
-        <div>
-          <div class="metric-label">Client Satisfaction</div>
-          <div class="metric-bar"><div class="metric-fill" style="width:100%"></div></div>
-        </div>
-        <div class="metric-value">5★</div>
-      </div>
-      <div class="metric-row">
-        <div>
-          <div class="metric-label">Affordability Score</div>
-          <div class="metric-bar"><div class="metric-fill" style="width:99%"></div></div>
-        </div>
-        <div class="metric-value">₹999</div>
-      </div>
-      <div style="margin-top:20px; padding:20px; background:rgba(255,184,0,0.07); border-radius:12px; border:1px solid rgba(255,184,0,0.2)">
-        <p style="font-size:0.85rem; color:var(--muted); line-height:1.7">
-          💬 <em>"Clean website, fast delivery, great value. Highly recommended for any small business wanting to go online quickly."</em>
-        </p>
-        <p style="font-size:0.78rem; color:var(--gold); margin-top:10px; font-weight:600">— Happy Client, Kota</p>
-      </div>
-    </div>
+    <p class="pricing-note">* All plans include a FREE demo first. You pay only after approval. Demo delivered in 48 hours.</p>
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- =====================================================
+     PORTFOLIO / DEMOS
+===================================================== -->
+<section id="portfolio">
+  <div class="portfolio-inner">
+    <div class="portfolio-header">
+      <div>
+        <div class="section-tag">Live Work</div>
+        <h2 class="section-title">Real Gym Websites<br>We've Built</h2>
+      </div>
+      <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20saw%20your%20demos%20and%20want%20a%20website%20for%20my%20gym." target="_blank" class="btn-red">Request My Demo →</a>
+    </div>
+
+    <div class="portfolio-grid">
+
+      <!-- DEMO 1 — GYM -->
+      <!-- ✏️ REPLACE: href with your live gym demo URL -->
+      <a href="https://mr-yadav00.github.io/YadavFitnessClub/" target="_blank" class="portfolio-card reveal">
+        <div class="portfolio-preview">
+          <!-- ✏️ REPLACE: Add <img src="YOUR_GYM_SCREENSHOT.jpg" alt="Yadav Fitness Club"> -->
+          <div class="portfolio-preview-placeholder">
+            <span style="font-size:2.5rem">🏋️</span>
+            <span>[ Screenshot of gym demo ]</span>
+            <!-- ✏️ Replace above with: <img src="YOUR_SCREENSHOT_URL" alt="Yadav Fitness Club"> -->
+          </div>
+          <div class="port-cat">🏋️ Gym</div>
+          <div class="port-live">View Live ↗</div>
+        </div>
+        <div class="port-info">
+          <h3>Yadav Fitness Club</h3>
+          <p class="port-loc">📍 Jwahar Nagar, Kota</p>
+          <div class="port-tags">
+            <span class="port-tag">1-Page</span>
+            <span class="port-tag">WhatsApp CTA</span>
+            <span class="port-tag">Mobile First</span>
+            <span class="port-tag">Dark Theme</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- DEMO 2 — HOSTEL (shows versatility) -->
+      <!-- ✏️ REPLACE: href with your hostel demo URL -->
+      <a href="https://mr-yadav00.github.io/Radha-Raman-Residency/" target="_blank" class="portfolio-card reveal">
+        <div class="portfolio-preview" style="background:linear-gradient(135deg,#001a1a,#111)">
+          <div class="portfolio-preview-placeholder">
+            <span style="font-size:2.5rem">🏠</span>
+            <span>[ Screenshot of residency demo ]</span>
+          </div>
+          <div class="port-cat">🏠 Residency</div>
+          <div class="port-live">View Live ↗</div>
+        </div>
+        <div class="port-info">
+          <h3>Radha Raman Residency</h3>
+          <p class="port-loc">📍 Premium Student Living, Kota</p>
+          <div class="port-tags">
+            <span class="port-tag">1-Page</span>
+            <span class="port-tag">Gallery</span>
+            <span class="port-tag">Pricing Table</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- DEMO 3 — REAL ESTATE -->
+      <!-- ✏️ REPLACE: href with your real estate demo URL -->
+      <a href="https://mr-yadav00.github.io/Lekhraj-contractor-/" target="_blank" class="portfolio-card reveal">
+        <div class="portfolio-preview" style="background:linear-gradient(135deg,#0a0a00,#111)">
+          <div class="portfolio-preview-placeholder">
+            <span style="font-size:2.5rem">🏗️</span>
+            <span>[ Screenshot of contractor demo ]</span>
+          </div>
+          <div class="port-cat">🏗️ Real Estate</div>
+          <div class="port-live">View Live ↗</div>
+        </div>
+        <div class="port-info">
+          <h3>Lekhraj Contractor</h3>
+          <p class="port-loc">📍 Precast Walls & Real Estate, Kota</p>
+          <div class="port-tags">
+            <span class="port-tag">1-Page</span>
+            <span class="port-tag">Project Gallery</span>
+            <span class="port-tag">Enquiry Form</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
 <section id="process">
-  <div style="text-align:center; margin-bottom:0">
-    <div class="section-tag" style="justify-content:center">How It Works</div>
-    <h2 class="section-title">Ready in 3 Simple Steps</h2>
-    <p class="section-sub" style="margin:0 auto">From WhatsApp message to live website — it really is this easy.</p>
-  </div>
-
-  <div class="process-steps">
-    <div class="process-step reveal">
-      <div class="step-circle">01</div>
-      <h3>Share Your Details</h3>
-      <p>WhatsApp us your business name, what you do, your photos and any preferences. That's all we need.</p>
+  <div class="process-inner">
+    <div style="text-align:center">
+      <div class="section-tag" style="justify-content:center">How It Works</div>
+      <h2 class="section-title">From Zero to Live Website<br>in 4 Simple Steps</h2>
     </div>
-    <div class="process-step reveal">
-      <div class="step-circle">02</div>
-      <h3>We Build It</h3>
-      <p>Our team designs your clean, fast, mobile-ready website within 24 hours. No fuss, no back-and-forth delays.</p>
-    </div>
-    <div class="process-step reveal">
-      <div class="step-circle">03</div>
-      <h3>Review &amp; Go Live</h3>
-      <p>You review the website, suggest changes, and we publish it. Your business is now live on the internet!</p>
-    </div>
-  </div>
-</section>
-
-<!-- GET STARTED FORM -->
-<section id="getstarted">
-  <div class="form-wrap">
-    <div class="section-tag">Start Your Project</div>
-    <h2 class="section-title">Tell Us About<br><span style="color:var(--gold)">Your Business</span></h2>
-    <p class="section-sub">Fill this quick form — we'll know exactly what you need and send you a quote on WhatsApp instantly.</p>
-
-    <!-- Step Progress -->
-    <div class="step-progress" id="stepProgress">
-      <div class="sp-item active" data-step="1">
-        <div class="sp-num">1</div>
-        <div class="sp-label">You</div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <div class="step-num">01</div>
+        <h3>Share Your Gym Details</h3>
+        <p>WhatsApp your gym name, location, photos, and what makes you unique. Takes 5 minutes.</p>
       </div>
-      <div class="sp-item" data-step="2">
-        <div class="sp-num">2</div>
-        <div class="sp-label">Business</div>
+      <div class="process-step reveal">
+        <div class="step-num">02</div>
+        <h3>We Design Your Demo</h3>
+        <p>Our team builds a custom website demo for your gym within 48 hours. No templates, no shortcuts.</p>
       </div>
-      <div class="sp-item" data-step="3">
-        <div class="sp-num">3</div>
-        <div class="sp-label">Website</div>
+      <div class="process-step reveal">
+        <div class="step-num">03</div>
+        <h3>You Review & Approve</h3>
+        <p>We send you the demo link. You review it, request changes, and approve when you love it.</p>
       </div>
-      <div class="sp-item" data-step="4">
-        <div class="sp-num">4</div>
-        <div class="sp-label">Plan</div>
-      </div>
-      <div class="sp-item" data-step="5">
-        <div class="sp-num">5</div>
-        <div class="sp-label">Send</div>
+      <div class="process-step reveal">
+        <div class="step-num">04</div>
+        <h3>Go Live & Get Leads 🚀</h3>
+        <p>After payment, your gym website goes live. Members start finding you online the same day.</p>
       </div>
     </div>
-
-    <div class="form-card reveal">
-
-      <!-- STEP 1: Personal Info -->
-      <div class="form-step active" id="step1">
-        <div class="step-counter">STEP <span>01</span> / 04</div>
-        <div class="step-title">Your <span>Details</span></div>
-        <p class="step-desc">So we know who we're building for and how to reach you.</p>
-
-        <div class="form-row">
-          <div class="field">
-            <label>Full Name <span>*</span></label>
-            <input type="text" id="f_name" placeholder="e.g. Ramesh Kumar" />
-          </div>
-          <div class="field">
-            <label>WhatsApp Number <span>*</span></label>
-            <input type="tel" id="f_phone" placeholder="e.g. 9876543210" maxlength="10" />
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label>City / Location <span>*</span></label>
-            <input type="text" id="f_city" placeholder="e.g. Kota, Rajasthan" />
-          </div>
-          <div class="field">
-            <label>Email Address</label>
-            <input type="email" id="f_email" placeholder="e.g. you@gmail.com (optional)" />
-          </div>
-        </div>
-
-        <div class="form-nav">
-          <div></div>
-          <button class="btn-next" onclick="goStep(2)">Next: Business Info →</button>
-        </div>
-        <p class="required-note"><span>*</span> Required fields</p>
-      </div>
-
-      <!-- STEP 2: Business Info -->
-      <div class="form-step" id="step2">
-        <div class="step-counter">STEP <span>02</span> / 04</div>
-        <div class="step-title">Your <span>Business</span></div>
-        <p class="step-desc">Tell us what your business does so we can design it perfectly.</p>
-
-        <div class="form-row">
-          <div class="field">
-            <label>Business Name <span>*</span></label>
-            <input type="text" id="f_bname" placeholder="e.g. Sharma Sweets & Bakery" />
-          </div>
-          <div class="field">
-            <label>Business Type <span>*</span></label>
-            <select id="f_btype">
-              <option value="">— Select category —</option>
-              <option>Gym / Fitness Centre</option>
-              <option>Hostel / PG / Residency</option>
-              <option>Real Estate / Property</option>
-              <option>Restaurant / Food</option>
-              <option>Salon / Beauty Parlour</option>
-              <option>Clinic / Doctor</option>
-              <option>Shop / Retail</option>
-              <option>Coaching / Education</option>
-              <option>Event / Wedding</option>
-              <option>Contractor / Construction</option>
-              <option>Photographer / Videographer</option>
-              <option>Hotel / Lodge</option>
-              <option>Travel / Tour</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row single">
-          <div class="field">
-            <label>What does your business do? <span>*</span></label>
-            <textarea id="f_bdesc" placeholder="e.g. We run a gym in Kota offering weight training, cardio and yoga classes. We have 200+ members..."></textarea>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="field">
-            <label>Business Address / Area</label>
-            <input type="text" id="f_baddress" placeholder="e.g. Near Bus Stand, Talwandi, Kota" />
-          </div>
-          <div class="field">
-            <label>Business WhatsApp / Phone</label>
-            <input type="tel" id="f_bphone" placeholder="e.g. 9876543210" />
-          </div>
-        </div>
-
-        <div class="form-nav">
-          <button class="btn-back" onclick="goStep(1)">← Back</button>
-          <button class="btn-next" onclick="goStep(3)">Next: Website Needs →</button>
-        </div>
-      </div>
-
-      <!-- STEP 3: Website Requirements -->
-      <div class="form-step" id="step3">
-        <div class="step-counter">STEP <span>03</span> / 04</div>
-        <div class="step-title">Website <span>Requirements</span></div>
-        <p class="step-desc">What sections and features do you need on your website?</p>
-
-        <div class="field" style="margin-bottom:18px">
-          <label>Which sections do you want? (Select all that apply)</label>
-          <div class="chip-group" id="chips_sections">
-            <div class="chip selected" data-val="Hero / Banner">🎯 Hero Banner</div>
-            <div class="chip selected" data-val="About Us">👤 About Us</div>
-            <div class="chip selected" data-val="Services / Products">🛠️ Services</div>
-            <div class="chip" data-val="Photo Gallery">🖼️ Photo Gallery</div>
-            <div class="chip" data-val="Pricing / Plans">💰 Pricing</div>
-            <div class="chip" data-val="Testimonials">⭐ Testimonials</div>
-            <div class="chip" data-val="Google Map">📍 Google Map</div>
-            <div class="chip" data-val="Contact Form">📋 Contact Form</div>
-            <div class="chip selected" data-val="WhatsApp Button">💬 WhatsApp Button</div>
-            <div class="chip" data-val="Social Media Links">📱 Social Media</div>
-            <div class="chip" data-val="Team / Staff">👥 Team / Staff</div>
-            <div class="chip" data-val="FAQ Section">❓ FAQ</div>
-          </div>
-        </div>
-
-        <div class="field" style="margin-bottom:18px">
-          <label>Preferred Color Theme</label>
-          <div class="chip-group" id="chips_color">
-            <div class="chip" data-val="Dark & Bold (Black/Gold)">🖤 Dark & Bold</div>
-            <div class="chip" data-val="Light & Clean (White)">🤍 Light & Clean</div>
-            <div class="chip" data-val="Blue & Professional">💙 Blue & Pro</div>
-            <div class="chip" data-val="Green & Natural">💚 Green & Natural</div>
-            <div class="chip" data-val="Red & Energetic">❤️ Red & Energy</div>
-            <div class="chip" data-val="Saffron & Indian">🧡 Saffron</div>
-            <div class="chip" data-val="No Preference - You Decide">🎨 You Decide</div>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="field">
-            <label>Do you have a Logo?</label>
-            <select id="f_logo">
-              <option value="Yes, I have a logo">✅ Yes, I have a logo</option>
-              <option value="No, I need a logo designed">❌ No, I need logo design</option>
-              <option value="I have a rough idea for logo">💡 I have a rough idea</option>
-            </select>
-          </div>
-          <div class="field">
-            <label>Do you have photos / images?</label>
-            <select id="f_photos">
-              <option value="Yes, I will provide photos">✅ Yes, I'll provide photos</option>
-              <option value="No, please use stock images">🖼️ Use stock images</option>
-              <option value="Mix of both">🔀 Mix of both</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row single">
-          <div class="field">
-            <label>Any website you like the look of? (Reference)</label>
-            <input type="text" id="f_ref" placeholder="e.g. https://example.com or just describe: clean, dark, premium..." />
-          </div>
-        </div>
-
-        <div class="form-nav">
-          <button class="btn-back" onclick="goStep(2)">← Back</button>
-          <button class="btn-next" onclick="goStep(4)">Next: Choose Plan →</button>
-        </div>
-      </div>
-
-      <!-- STEP 4: Plan Selection -->
-      <div class="form-step" id="step4">
-        <div class="step-counter">STEP <span>04</span> / 04</div>
-        <div class="step-title">Choose Your <span>Plan</span></div>
-        <p class="step-desc">Select a plan that fits your budget. We can discuss further on WhatsApp too.</p>
-
-        <div class="plan-cards" id="planCards" style="margin-bottom:22px">
-          <div class="plan-card selected" data-plan="Starter – ₹999" onclick="selectPlan(this)">
-            <div class="plan-name">Starter</div>
-            <div class="plan-price">₹999</div>
-            <div class="plan-note">1-Page Site · 24 Hrs</div>
-          </div>
-          <div class="plan-card" data-plan="Growth – ₹2998 (with Domain)" onclick="selectPlan(this)">
-            <div class="plan-name">Growth ⭐</div>
-            <div class="plan-price">₹2998</div>
-            <div class="plan-note">+ Domain Included</div>
-          </div>
-          <div class="plan-card" data-plan="Custom – Let's Discuss" onclick="selectPlan(this)">
-            <div class="plan-name">Custom</div>
-            <div class="plan-price" style="font-size:1.1rem;line-height:2">Let's Talk</div>
-            <div class="plan-note">Tailored Solution</div>
-          </div>
-        </div>
-
-        <div class="form-row single">
-          <div class="field">
-            <label>When do you need the website?</label>
-            <select id="f_deadline">
-              <option value="ASAP (within 24 hours)">⚡ ASAP — Within 24 Hours</option>
-              <option value="Within 2-3 days">📅 Within 2–3 Days</option>
-              <option value="Within a week">🗓️ Within a Week</option>
-              <option value="No rush, take your time">🙂 No Rush</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row single">
-          <div class="field">
-            <label>Anything else you'd like to tell us?</label>
-            <textarea id="f_extra" placeholder="Any special requests, ideas, or questions for Kapil..."></textarea>
-          </div>
-        </div>
-
-        <div class="form-nav">
-          <button class="btn-back" onclick="goStep(3)">← Back</button>
-          <button class="btn-next" onclick="goStep(5)">Preview & Send →</button>
-        </div>
-      </div>
-
-      <!-- STEP 5: Summary & Send -->
-      <div class="form-step" id="step5">
-        <div class="step-counter">STEP <span>✓</span> READY TO SEND</div>
-        <div class="step-title">Review & <span>Send</span></div>
-        <p class="step-desc">Here's a summary of your details. Hit the button below to send it directly to Kapil on WhatsApp!</p>
-
-        <div class="summary-box" id="summaryBox">Generating your summary...</div>
-
-        <div class="form-nav" style="flex-direction:column; gap:10px">
-          <button class="btn-whatsapp" onclick="sendToWhatsApp()">
-            💬 Send to Kapil on WhatsApp
-          </button>
-          <button class="btn-back" onclick="goStep(4)" style="text-align:center; width:100%">← Go Back & Edit</button>
-        </div>
-        <p class="contact-note" style="text-align:center; margin-top:14px">This will open WhatsApp with your details pre-filled • Kapil replies within minutes</p>
-      </div>
-
-    </div><!-- /form-card -->
-  </div><!-- /form-wrap -->
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="contact-wrap">
-    <div class="section-tag">Get In Touch</div>
-    <h2 class="section-title">Ready to Go Online?</h2>
-    <p class="section-sub">Send us a WhatsApp message with your business name and we'll take it from there. Simple as that.</p>
-
-    <div class="contact-cards">
-      <a href="https://wa.me/919460722862" target="_blank" class="contact-card">
-        <div class="icon">💬</div>
-        <div class="c-label">WhatsApp</div>
-        <div class="c-value">+91 94607 22862</div>
-      </a>
-      <a href="tel:+918696352862" class="contact-card">
-        <div class="icon">📞</div>
-        <div class="c-label">Phone Call</div>
-        <div class="c-value">+91 86963 52862</div>
-      </a>
-      <a href="https://www.instagram.com/sitelabindia?igsh=OXcweTN2NTQ1Z3kz" target="_blank" class="contact-card">
-        <div class="icon">📸</div>
-        <div class="c-label">Instagram</div>
-        <div class="c-value">@sitelabindia</div>
-      </a>
+    <div style="text-align:center;margin-top:48px">
+      <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20want%20to%20start%20the%20process%20for%20my%20gym%20website." target="_blank" class="btn-wa">💬 Start the Process on WhatsApp</a>
     </div>
-
-    <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20want%20a%20website%20for%20my%20business.%20Please%20share%20more%20details%20about%20your%20plans." target="_blank" class="whatsapp-cta">
-      <span class="whatsapp-icon">💬</span>
-      Chat on WhatsApp — It's Free!
-    </a>
-    <br>
-    <p class="contact-note">Typically replies within minutes • All queries welcome • Quotes are free</p>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-content">
-    <div>
-      <a href="#hero" class="footer-logo">Site<span>Lab</span> India</a>
-      <p class="footer-tagline">Clean. Fast. Affordable. Online in 24 Hours.</p>
+<!-- =====================================================
+     OBJECTION FAQ
+===================================================== -->
+<section id="faq">
+  <div class="faq-inner">
+    <div style="text-align:center">
+      <div class="section-tag" style="justify-content:center">FAQ</div>
+      <h2 class="section-title">Your Questions,<br>Answered Honestly</h2>
     </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#demos">Demos</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What if I don't like the demo?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Simple — no payment required. If you don't like the demo, you owe us nothing. Zero. We take that risk so you don't have to. That's our guarantee.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          How fast will I actually get the demo?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Within 48 hours of receiving your gym details. We work fast because we know every day without a website is a day you're losing potential members.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Do I need to know anything technical?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Absolutely not. You tell us about your gym — we handle everything else. Design, development, launch. You just review and approve. Focus on your gym, we'll handle your website.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What support do you provide after delivery?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Starter plan: 1 month of support. Growth plan: 6 months support + 1 month revisions. Pro plan: 1 full year of support + 2 months revisions. Direct WhatsApp support with Kapil personally.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Will my website show up on Google?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Yes — we do basic SEO setup on every website. This means your gym name, city, and services are optimized so Google can find and show your website when people search locally.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          What information do you need from me?
+          <div class="faq-icon">+</div>
+        </div>
+        <div class="faq-a">Your gym name, location, a few photos, your membership prices (if you want to show them), and your WhatsApp number. That's it. We guide you through everything via WhatsApp chat.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOUNDER SECTION
+===================================================== -->
+<section id="founder">
+  <div class="founder-inner reveal">
+    <!-- ✏️ REPLACE: emoji with <img> tag using your actual photo -->
+    <div class="founder-photo">👨‍💻</div>
+    <div class="founder-content">
+      <blockquote>
+        <!-- ✏️ REPLACE: Update this quote to match your actual story -->
+        "I built SiteLab India because I saw local gym owners in Kota losing members to gyms that just had a better online presence. Your training quality is excellent — but customers don't know that until they find you online. A great website levels the playing field. That's what I'm here to build for you."
+      </blockquote>
+      <!-- ✏️ REPLACE: Name and title if needed -->
+      <div class="founder-name">Kapil Ahir</div>
+      <div class="founder-title">Founder, SiteLab India · Web Developer · Kota, Rajasthan</div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     FINAL CTA
+===================================================== -->
+<section id="final-cta">
+  <div class="final-cta-inner">
+    <h2>Stop Losing Gym Clients<br>to Competitors</h2>
+    <p>Get your gym website demo in 48 hours and start getting more walk-ins, enquiries, and members.</p>
+    <div class="final-btns">
+      <a href="#demo-offer" class="btn-white">🚀 Get Free Demo Now</a>
+      <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20want%20a%20gym%20website.%20Please%20share%20more%20details." target="_blank" class="btn-wa-dark">💬 Chat on WhatsApp</a>
+    </div>
+    <p class="final-urgency">⚡ Limited demo slots this week · No payment upfront · 48-hour delivery</p>
+  </div>
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+<footer id="contact-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#hero" class="f-logo">Site<span>Lab</span> India</a>
+      <p>We build high-converting websites for gym owners across India. Fast. Affordable. Built to get you more members.</p>
+      <p class="f-story">
+        <!-- ✏️ REPLACE: Update founder story -->
+        Founded by Kapil Ahir, a web developer from Kota, Rajasthan — with a mission to help every small business in India win online.
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#demo-offer">Free Demo</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#portfolio">Our Work</a></li>
+        <li><a href="#process">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="footer-contacts">
+        <div class="f-contact-item">
+          <div class="f-contact-icon">💬</div>
+          <div class="f-contact-text">
+            <!-- ✏️ REPLACE: WhatsApp number -->
+            <a href="https://wa.me/919460722862" target="_blank">+91 94607 22862</a>
+          </div>
+        </div>
+        <div class="f-contact-item">
+          <div class="f-contact-icon">📞</div>
+          <div class="f-contact-text">
+            <!-- ✏️ REPLACE: Call number -->
+            <a href="tel:+918696352862">+91 86963 52862</a>
+          </div>
+        </div>
+        <div class="f-contact-item">
+          <div class="f-contact-icon">📸</div>
+          <div class="f-contact-text">
+            <!-- ✏️ REPLACE: Instagram link -->
+            <a href="https://www.instagram.com/sitelabindia" target="_blank">@sitelabindia</a>
+          </div>
+        </div>
+        <div class="f-contact-item">
+          <div class="f-contact-icon">📍</div>
+          <div class="f-contact-text">
+            <!-- ✏️ REPLACE: Your city -->
+            <a href="#">Kota, Rajasthan, India</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 SiteLab India. All rights reserved.</p>
-    <p class="footer-dev">Built by <span>Kapil Ahir</span> — Web Developer, Kota</p>
+    <p>© 2025 <span>SiteLab India</span>. All rights reserved.</p>
+    <p>Built by <span>Kapil Ahir</span> · Web Developer · Kota</p>
   </div>
 </footer>
 
-<script>
-  // CUSTOM CURSOR
-  const cursor = document.getElementById('cursor');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cursor.style.left = mx + 'px'; cursor.style.top = my + 'px'; });
-  function animateRing() { rx += (mx - rx) * 0.14; ry += (my - ry) * 0.14; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(animateRing); }
-  animateRing();
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => { cursor.style.transform = 'translate(-50%,-50%) scale(2)'; cursor.style.background = 'rgba(255,184,0,0.5)'; ring.style.transform = 'translate(-50%,-50%) scale(1.5)'; });
-    el.addEventListener('mouseleave', () => { cursor.style.transform = 'translate(-50%,-50%) scale(1)'; cursor.style.background = 'var(--gold)'; ring.style.transform = 'translate(-50%,-50%) scale(1)'; });
-  });
+<!-- STICKY WA BUTTON (mobile only) -->
+<div id="sticky-wa">
+  <a href="https://wa.me/919460722862?text=Hi%20Kapil!%20I%20want%20a%20free%20gym%20website%20demo." target="_blank">
+    💬 Get Free Gym Demo on WhatsApp
+  </a>
+</div>
 
-  // NAV SCROLL
-  window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  // MOBILE MENU
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-
-  // SCROLL REVEAL
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
-
-  // SMOOTH ANCHOR
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const target = document.querySelector(a.getAttribute('href'));
-      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
-
-  // CHIP TOGGLE
-  document.querySelectorAll('.chip-group').forEach(group => {
-    group.querySelectorAll('.chip').forEach(chip => {
-      chip.addEventListener('click', () => {
-        const isMulti = group.id === 'chips_sections';
-        if (isMulti) {
-          chip.classList.toggle('selected');
-        } else {
-          group.querySelectorAll('.chip').forEach(c => c.classList.remove('selected'));
-          chip.classList.add('selected');
-        }
-      });
-    });
-  });
-
-  // PLAN SELECT
-  function selectPlan(el) {
-    document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
-    el.classList.add('selected');
-  }
-
-  // STEP NAV
-  let currentStep = 1;
-  function goStep(n) {
-    const required = { 1: ['f_name','f_phone','f_city'], 2: ['f_bname','f_btype','f_bdesc'] };
-    if (n > currentStep && required[currentStep]) {
-      for (const id of required[currentStep]) {
-        const el = document.getElementById(id);
-        if (!el.value.trim()) {
-          el.focus();
-          el.style.borderColor = '#ff4d4d';
-          el.addEventListener('input', () => el.style.borderColor = '', { once: true });
-          return;
-        }
-      }
-    }
-    if (n === 5) buildSummary();
-    document.getElementById('step' + currentStep).classList.remove('active');
-    document.getElementById('step' + n).classList.add('active');
-    currentStep = n;
-    // Update progress
-    document.querySelectorAll('.sp-item').forEach(item => {
-      const s = parseInt(item.dataset.step);
-      item.classList.remove('active','done');
-      if (s < n) item.classList.add('done');
-      else if (s === n) item.classList.add('active');
-    });
-    document.getElementById('getstarted').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
-  // BUILD SUMMARY
-  function buildSummary() {
-    const sections = [...document.querySelectorAll('#chips_sections .chip.selected')].map(c => c.dataset.val).join(', ') || 'Not selected';
-    const colorTheme = document.querySelector('#chips_color .chip.selected')?.dataset.val || 'Not selected';
-    const selectedPlan = document.querySelector('.plan-card.selected')?.dataset.plan || 'Not selected';
-    const lines = [
-      ['👤 Name', document.getElementById('f_name').value || '—'],
-      ['📱 WhatsApp', document.getElementById('f_phone').value || '—'],
-      ['🏙️ City', document.getElementById('f_city').value || '—'],
-      ['📧 Email', document.getElementById('f_email').value || 'Not provided'],
-      ['', ''],
-      ['🏢 Business Name', document.getElementById('f_bname').value || '—'],
-      ['📂 Business Type', document.getElementById('f_btype').value || '—'],
-      ['📍 Address', document.getElementById('f_baddress').value || 'Not provided'],
-      ['📞 Business Phone', document.getElementById('f_bphone').value || 'Not provided'],
-      ['📝 About Business', document.getElementById('f_bdesc').value || '—'],
-      ['', ''],
-      ['📄 Sections Needed', sections],
-      ['🎨 Color Theme', colorTheme],
-      ['🖼️ Logo', document.getElementById('f_logo').value],
-      ['📷 Photos', document.getElementById('f_photos').value],
-      ['🔗 Reference Site', document.getElementById('f_ref').value || 'None'],
-      ['', ''],
-      ['💰 Selected Plan', selectedPlan],
-      ['⏰ Deadline', document.getElementById('f_deadline').value],
-      ['💬 Extra Notes', document.getElementById('f_extra').value || 'None'],
-    ];
-    const box = document.getElementById('summaryBox');
-    box.innerHTML = lines.map(([k,v]) => k ? `<strong>${k}:</strong> ${v}` : '').join('<br>');
-  }
-
-  // SEND TO WHATSAPP
-  function sendToWhatsApp() {
-    const sections = [...document.querySelectorAll('#chips_sections .chip.selected')].map(c => c.dataset.val).join(', ') || 'Not selected';
-    const colorTheme = document.querySelector('#chips_color .chip.selected')?.dataset.val || 'Not selected';
-    const selectedPlan = document.querySelector('.plan-card.selected')?.dataset.plan || 'Not selected';
-    const msg = `🌐 *New Website Enquiry — SiteLab India*
-
-👤 *PERSONAL DETAILS*
-• Name: ${document.getElementById('f_name').value || '—'}
-• WhatsApp: ${document.getElementById('f_phone').value || '—'}
-• City: ${document.getElementById('f_city').value || '—'}
-• Email: ${document.getElementById('f_email').value || 'Not provided'}
-
-🏢 *BUSINESS DETAILS*
-• Business Name: ${document.getElementById('f_bname').value || '—'}
-• Type: ${document.getElementById('f_btype').value || '—'}
-• Address: ${document.getElementById('f_baddress').value || 'Not provided'}
-• Business Phone: ${document.getElementById('f_bphone').value || 'Not provided'}
-• About: ${document.getElementById('f_bdesc').value || '—'}
-
-💻 *WEBSITE REQUIREMENTS*
-• Sections: ${sections}
-• Color Theme: ${colorTheme}
-• Logo: ${document.getElementById('f_logo').value}
-• Photos: ${document.getElementById('f_photos').value}
-• Reference: ${document.getElementById('f_ref').value || 'None'}
-
-💰 *PLAN & TIMELINE*
-• Selected Plan: ${selectedPlan}
-• Deadline: ${document.getElementById('f_deadline').value}
-• Extra Notes: ${document.getElementById('f_extra').value || 'None'}
-
-_Sent via SiteLab India website form_ ✅`;
-    window.open('https://wa.me/919460722862?text=' + encodeURIComponent(msg), '_blank');
-  }
-</script>
-
-<!-- ============================================================
-     SITELAB AI ASSISTANT — Powered by Gemini
-     ➡ PASTE YOUR GEMINI API KEY BELOW (replace YOUR_API_KEY_HERE)
-============================================================ -->
-<style>
-  /* CHAT BUBBLE */
-  #sl-chat-btn {
-    position: fixed; bottom: 28px; right: 28px; z-index: 9990;
-    width: 62px; height: 62px; border-radius: 50%;
-    background: linear-gradient(135deg, #FFB800, #FF8C00);
-    border: none; cursor: pointer;
-    box-shadow: 0 6px 28px rgba(255,184,0,0.5);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.6rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-    animation: chatPulse 2.5s ease-in-out infinite;
-  }
-  #sl-chat-btn:hover { transform: scale(1.1); box-shadow: 0 10px 36px rgba(255,184,0,0.65); }
-  @keyframes chatPulse {
-    0%,100% { box-shadow: 0 6px 28px rgba(255,184,0,0.5); }
-    50% { box-shadow: 0 6px 40px rgba(255,184,0,0.8), 0 0 0 10px rgba(255,184,0,0.08); }
-  }
-
-  /* NOTIFICATION DOT */
-  #sl-notif {
-    position: fixed; bottom: 82px; right: 28px; z-index: 9991;
-    background: #fff; color: #000;
-    font-size: 0.72rem; font-weight: 700;
-    padding: 6px 12px; border-radius: 100px;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.4);
-    white-space: nowrap;
-    animation: notifBounce 0.5s ease 2s both;
-    font-family: 'Outfit', sans-serif;
-  }
-  @keyframes notifBounce { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
-
-  /* CHAT WINDOW */
-  #sl-chat-win {
-    position: fixed; bottom: 104px; right: 28px; z-index: 9989;
-    width: 360px; height: 520px;
-    background: #0d0d1a;
-    border: 1px solid rgba(255,184,0,0.2);
-    border-radius: 20px;
-    display: flex; flex-direction: column;
-    overflow: hidden;
-    box-shadow: 0 24px 80px rgba(0,0,0,0.7);
-    transform: scale(0.85) translateY(20px);
-    opacity: 0; pointer-events: none;
-    transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), opacity 0.3s;
-    font-family: 'Outfit', sans-serif;
-  }
-  #sl-chat-win.open {
-    transform: scale(1) translateY(0);
-    opacity: 1; pointer-events: all;
-  }
-
-  /* CHAT HEADER */
-  .sl-header {
-    background: linear-gradient(135deg, rgba(255,184,0,0.15), rgba(255,184,0,0.05));
-    border-bottom: 1px solid rgba(255,184,0,0.15);
-    padding: 16px 18px;
-    display: flex; align-items: center; gap: 12px;
-    flex-shrink: 0;
-  }
-  .sl-avatar {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, #FFB800, #FF8C00);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem; flex-shrink: 0;
-    box-shadow: 0 0 14px rgba(255,184,0,0.4);
-  }
-  .sl-hinfo h4 { color: #fff; font-size: 0.92rem; font-weight: 700; }
-  .sl-hinfo p { color: rgba(255,255,255,0.4); font-size: 0.72rem; display:flex; align-items:center; gap:5px; margin-top:2px; }
-  .sl-online-dot { width:6px; height:6px; background:#00e676; border-radius:50%; box-shadow:0 0 6px #00e676; }
-  .sl-close {
-    margin-left: auto; background: none; border: none;
-    color: rgba(255,255,255,0.3); font-size: 1.1rem;
-    cursor: pointer; padding: 4px; transition: color 0.2s;
-  }
-  .sl-close:hover { color: #fff; }
-
-  /* MESSAGES AREA */
-  .sl-msgs {
-    flex: 1; overflow-y: auto; padding: 16px 14px;
-    display: flex; flex-direction: column; gap: 10px;
-    scroll-behavior: smooth;
-  }
-  .sl-msgs::-webkit-scrollbar { width: 3px; }
-  .sl-msgs::-webkit-scrollbar-thumb { background: rgba(255,184,0,0.3); border-radius:10px; }
-
-  /* BUBBLES */
-  .sl-bubble {
-    max-width: 82%; padding: 10px 14px;
-    border-radius: 14px; font-size: 0.84rem;
-    line-height: 1.55; word-break: break-word;
-    animation: bubbleIn 0.3s ease both;
-  }
-  @keyframes bubbleIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
-  .sl-bubble.bot {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: rgba(255,255,255,0.85);
-    border-bottom-left-radius: 4px;
-    align-self: flex-start;
-  }
-  .sl-bubble.user {
-    background: linear-gradient(135deg, #FFB800, #FF9500);
-    color: #000; font-weight: 600;
-    border-bottom-right-radius: 4px;
-    align-self: flex-end;
-  }
-  .sl-bubble.bot a { color: #FFB800; text-decoration: underline; }
-
-  /* TYPING INDICATOR */
-  .sl-typing {
-    display: flex; gap: 4px; padding: 12px 14px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.08);
-    border-radius: 14px; border-bottom-left-radius: 4px;
-    align-self: flex-start; align-items: center;
-  }
-  .sl-typing span {
-    width: 6px; height: 6px; border-radius: 50%;
-    background: rgba(255,255,255,0.4);
-    animation: typingDot 1.2s ease-in-out infinite;
-  }
-  .sl-typing span:nth-child(2) { animation-delay: 0.2s; }
-  .sl-typing span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes typingDot { 0%,80%,100%{transform:scale(1);opacity:0.4} 40%{transform:scale(1.3);opacity:1} }
-
-  /* QUICK REPLIES */
-  .sl-quick-wrap {
-    padding: 6px 14px 4px;
-    display: flex; gap: 7px; flex-wrap: wrap;
-    flex-shrink: 0;
-  }
-  .sl-quick {
-    background: rgba(255,184,0,0.1);
-    border: 1px solid rgba(255,184,0,0.3);
-    color: #FFB800; font-size: 0.73rem; font-weight: 600;
-    padding: 5px 12px; border-radius: 100px;
-    cursor: pointer; font-family: 'Outfit',sans-serif;
-    transition: 0.2s; white-space: nowrap;
-  }
-  .sl-quick:hover { background: rgba(255,184,0,0.2); }
-
-  /* LEAD CAPTURE MINI FORM */
-  .sl-lead-form {
-    margin: 6px 0;
-    background: rgba(255,184,0,0.06);
-    border: 1px solid rgba(255,184,0,0.2);
-    border-radius: 12px; padding: 12px;
-    display: flex; flex-direction: column; gap: 8px;
-  }
-  .sl-lead-form input {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px; padding: 9px 12px;
-    color: #fff; font-family: 'Outfit',sans-serif;
-    font-size: 0.82rem; outline: none; width: 100%;
-    transition: border-color 0.2s;
-  }
-  .sl-lead-form input::placeholder { color: rgba(255,255,255,0.25); }
-  .sl-lead-form input:focus { border-color: rgba(255,184,0,0.5); }
-  .sl-lead-btn {
-    background: #25D366; color: #fff;
-    border: none; border-radius: 8px;
-    padding: 10px; font-family: 'Outfit',sans-serif;
-    font-size: 0.82rem; font-weight: 700;
-    cursor: pointer; transition: 0.2s;
-    display: flex; align-items: center; justify-content: center; gap: 6px;
-  }
-  .sl-lead-btn:hover { background: #1fb055; }
-
-  /* INPUT BAR */
-  .sl-input-bar {
-    padding: 12px 14px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    display: flex; gap: 8px; align-items: flex-end;
-    flex-shrink: 0;
-  }
-  .sl-input-bar textarea {
-    flex: 1; background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px; padding: 10px 14px;
-    color: #fff; font-family: 'Outfit', sans-serif;
-    font-size: 0.84rem; outline: none; resize: none;
-    max-height: 90px; min-height: 40px; line-height: 1.4;
-    transition: border-color 0.2s;
-  }
-  .sl-input-bar textarea::placeholder { color: rgba(255,255,255,0.2); }
-  .sl-input-bar textarea:focus { border-color: rgba(255,184,0,0.4); }
-  .sl-send {
-    width: 40px; height: 40px; border-radius: 50%;
-    background: linear-gradient(135deg, #FFB800, #FF9500);
-    border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem; flex-shrink: 0;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .sl-send:hover { transform: scale(1.1); box-shadow: 0 4px 14px rgba(255,184,0,0.4); }
-  .sl-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
-
-  .sl-powered {
-    text-align: center; padding: 6px;
-    font-size: 0.62rem; color: rgba(255,255,255,0.15);
-    flex-shrink: 0;
-  }
-
-  @media (max-width: 400px) {
-    #sl-chat-win { width: calc(100vw - 20px); right: 10px; bottom: 90px; }
-  }
-</style>
-
-<!-- CHAT BUTTON -->
-<div id="sl-notif">👋 Hi! Got questions? Ask me!</div>
+<!-- AI CHATBOT BUTTON -->
+<div id="sl-notif">👋 Ask me anything!</div>
 <button id="sl-chat-btn" onclick="slToggleChat()" title="Chat with SiteLab AI">🤖</button>
 
-<!-- CHAT WINDOW -->
+<!-- AI CHATBOT WINDOW -->
 <div id="sl-chat-win">
   <div class="sl-header">
     <div class="sl-avatar">🤖</div>
     <div class="sl-hinfo">
       <h4>SiteLab AI Assistant</h4>
-      <p><span class="sl-online-dot"></span> Online — Powered by NVIDIA AI</p>
+      <p><span class="sl-online-dot"></span> Online — Powered by Gemini AI</p>
     </div>
     <button class="sl-close" onclick="slToggleChat()">✕</button>
   </div>
-
   <div class="sl-msgs" id="slMsgs"></div>
-
   <div class="sl-quick-wrap" id="slQuicks"></div>
-
   <div class="sl-input-bar">
-    <textarea id="slInput" placeholder="Type your question..." rows="1"
+    <textarea id="slInput" placeholder="Ask about pricing, demos, process..." rows="1"
       onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();slSend()}"
       oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
     <button class="sl-send" id="slSendBtn" onclick="slSend()">➤</button>
   </div>
-  <div class="sl-powered">✦ AI by NVIDIA · Gemma · SiteLab India</div>
+  <div class="sl-powered">✦ AI by Google Gemini · SiteLab India</div>
 </div>
 
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 <script>
 // ─────────────────────────────────────────────
-//  ➡  PASTE YOUR NEW NVIDIA API KEY HERE ↓
+// ✏️ PASTE YOUR GEMINI API KEY HERE
 // ─────────────────────────────────────────────
-const NVIDIA_API_KEY = 'YOUR_NEW_NVIDIA_KEY_HERE';
+const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY_HERE';
 // ─────────────────────────────────────────────
+const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
 
-const NVIDIA_URL = 'https://integrate.api.nvidia.com/v1/chat/completions';
-const NVIDIA_MODEL = 'google/gemma-3n-e4b-it';
+const SYSTEM_PROMPT = `You are a friendly AI assistant for "SiteLab India" — a web design service run by Kapil Ahir from Kota, Rajasthan, India.
 
-const SYSTEM_PROMPT = `You are a friendly, smart sales assistant for "SiteLab India" — a web design company run by Kapil Ahir based in Kota, Rajasthan.
+THIS PAGE IS TARGETED AT GYM OWNERS in India.
 
-ABOUT SITELAB INDIA:
-- Service: Professional 1-page micro-websites for small businesses
-- Tagline: Clean, fast, affordable. Ready in 24 hours.
-- Pricing:
-  • Starter Plan: ₹999 (1-page site, mobile ready, WhatsApp button, 24hr delivery)
-  • Growth Plan: ₹2,998 (everything in starter + domain registration for 1 year)
-  • Custom Plan: Pricing on discussion (multi-section, animations, logo, maintenance)
-  • Domain registration: ₹1,999/year (optional add-on)
-- Contact: WhatsApp: +91 94607 22862 | Call: +91 86963 52862 | Instagram: @sitelabindia
-- Live demos: Yadav Fitness Club (gym), Radha Raman Residency (hostel/PG), Lekhraj Contractor (real estate) — all in Kota
-- Delivery: 24 hours after receiving all details
-- Process: Client shares details → Kapil builds → Client reviews → Goes live
+KEY FACTS:
+- Service: High-converting 1-page+ websites for gym owners
+- Main offer: FREE demo in 48 hours — pay only if you like it
+- No upfront payment for the demo
+- Pricing: Starter ₹999 | Growth ₹1999 (MOST POPULAR) | Pro ₹2999
+- WhatsApp: +91 94607 22862 | Instagram: @sitelabindia
+- Delivery: 48 hours for demo, 2-3 days for full site
+- All sites are mobile-first, include WhatsApp button, fast-loading
+- Demo examples: Yadav Fitness Club (gym), Radha Raman Residency (PG), Lekhraj Contractor (real estate) — all in Kota
 
-YOUR GOAL:
-1. Answer any questions about SiteLab India warmly and clearly
-2. Help the visitor understand what plan suits their business
-3. After answering 2-3 questions, ALWAYS try to collect their lead:
-   - Ask for their name
-   - Ask for their business name and type
-   - Ask for their WhatsApp number
-   Then tell them Kapil will reach out shortly.
-4. Keep responses SHORT (2-4 lines max). No long paragraphs.
-5. Use emojis naturally. Be conversational like a helpful friend, not a robot.
-6. If they share their details, respond with: "LEAD_CAPTURED: name=[name], business=[business], phone=[phone]" — this triggers the WhatsApp button.
-7. Speak in simple English. If they write in Hindi, reply in Hindi mixed with English.
-8. Never make up pricing or features not listed above.`;
+YOUR GOALS:
+1. Answer questions about pricing, process, demos concisely (2-3 lines max)
+2. Push every gym owner toward the FREE DEMO offer
+3. After 2-3 exchanges, collect their lead (name, gym name, phone)
+4. If they share details: respond with LEAD_CAPTURED: name=[name], gym=[gym], phone=[phone]
+5. Use emojis. Be warm, confident, like a helpful friend
+6. If they write in Hindi — reply in Hindi/Hinglish
+7. Don't oversell. Be honest and genuine.`;
 
-let slChatHistory = [];
-let slIsOpen = false;
-let slLeadCaptured = false;
-let slNotifDismissed = false;
+// NAV / MOBILE MENU
+function openMobileMenu() { document.getElementById('mobileMenu').classList.add('open'); }
+function closeMobileMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// SCROLL REVEAL
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      revealObs.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// FAQ
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// LEAD FORM → WHATSAPP
+function submitLead() {
+  const name = document.getElementById('lead-name').value.trim();
+  const phone = document.getElementById('lead-phone').value.trim();
+  const gym = document.getElementById('lead-gym').value.trim();
+  const city = document.getElementById('lead-city').value.trim();
+  if (!name || !phone || !gym) {
+    alert('Please fill Name, WhatsApp Number and Gym Name!'); return;
+  }
+  const msg = `🏋️ *New Gym Website Demo Request — SiteLab India*\n\n👤 Name: ${name}\n📱 WhatsApp: ${phone}\n🏋️ Gym Name: ${gym}\n📍 City: ${city || 'Not specified'}\n\n_Submitted via SiteLab India gym landing page_ ✅`;
+  window.open(`https://wa.me/919460722862?text=${encodeURIComponent(msg)}`, '_blank');
+}
+
+// ─────── AI CHATBOT ───────
+let slChatHistory = [], slIsOpen = false, slLeadCaptured = false;
 
 function slToggleChat() {
   slIsOpen = !slIsOpen;
   document.getElementById('sl-chat-win').classList.toggle('open', slIsOpen);
   document.getElementById('sl-chat-btn').innerHTML = slIsOpen ? '✕' : '🤖';
-  const notif = document.getElementById('sl-notif');
   if (slIsOpen) {
-    notif.style.display = 'none';
-    if (slChatHistory.length === 0) slInit();
+    document.getElementById('sl-notif').style.display = 'none';
+    if (!slChatHistory.length) slInit();
     setTimeout(() => document.getElementById('slInput').focus(), 300);
-  } else {
-    if (!slNotifDismissed) notif.style.display = '';
   }
 }
 
 function slInit() {
-  const greetings = [
-    "👋 Namaste! I'm SiteLab's AI assistant.\n\nAapka business kaunsa hai? Main batata hoon kaunsa plan best rahega! 😊",
-    "👋 Hey there! I'm SiteLab India's AI helper.\n\nLooking for a website for your business? Tell me what you do and I'll find the perfect plan for you! ⚡",
-    "🤖 Hi! Welcome to SiteLab India!\n\nWe build professional websites for small businesses — starting at just ₹999, ready in 24 hours. What can I help you with today?"
-  ];
-  const msg = greetings[Math.floor(Math.random() * greetings.length)];
-  slAddBubble('bot', msg);
-  slShowQuicks(['💰 Pricing', '⚡ How fast?', '🖥️ See demos', '📞 Contact Kapil', '🏋️ Gym website', '🏠 Hostel website']);
+  slAddBubble('bot', "💪 Hey! I'm SiteLab's AI assistant.\n\nLooking for a website for your gym? I can help you understand how our free demo works and what plan suits you best. What's your question?");
+  slShowQuicks(['🆓 Free demo?', '💰 Pricing', '⏱️ How fast?', '📱 Mobile site?', '📞 Talk to Kapil']);
 }
 
-function slShowQuicks(options) {
-  const wrap = document.getElementById('slQuicks');
-  wrap.innerHTML = '';
-  options.forEach(opt => {
-    const btn = document.createElement('button');
-    btn.className = 'sl-quick';
-    btn.textContent = opt;
-    btn.onclick = () => { slHandleQuick(opt); };
-    wrap.appendChild(btn);
+function slShowQuicks(opts) {
+  const w = document.getElementById('slQuicks');
+  w.innerHTML = '';
+  opts.forEach(o => {
+    const b = document.createElement('button');
+    b.className = 'sl-quick'; b.textContent = o;
+    b.onclick = () => { w.innerHTML=''; slAddBubble('user',o); slAsk(o); };
+    w.appendChild(b);
   });
 }
 
-function slHandleQuick(text) {
-  document.getElementById('slQuicks').innerHTML = '';
-  slAddBubble('user', text);
-  slAsk(text);
+function slAddBubble(role, text) {
+  const msgs = document.getElementById('slMsgs');
+  const d = document.createElement('div');
+  d.className = `sl-bubble ${role}`; d.textContent = text;
+  msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
 }
 
-function slAddBubble(role, text, isHTML = false) {
+function slAddBubbleHTML(role, html) {
   const msgs = document.getElementById('slMsgs');
-  const div = document.createElement('div');
-  div.className = `sl-bubble ${role}`;
-  if (isHTML) div.innerHTML = text;
-  else div.textContent = text;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-  return div;
+  const d = document.createElement('div');
+  d.className = `sl-bubble ${role}`; d.innerHTML = html;
+  msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
 }
 
 function slShowTyping() {
   const msgs = document.getElementById('slMsgs');
-  const div = document.createElement('div');
-  div.className = 'sl-typing'; div.id = 'slTyping';
-  div.innerHTML = '<span></span><span></span><span></span>';
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
+  const d = document.createElement('div');
+  d.className = 'sl-typing'; d.id = 'slTyping';
+  d.innerHTML = '<span></span><span></span><span></span>';
+  msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
 }
-
-function slHideTyping() {
-  const t = document.getElementById('slTyping');
-  if (t) t.remove();
-}
+function slHideTyping() { document.getElementById('slTyping')?.remove(); }
 
 function slSend() {
-  const input = document.getElementById('slInput');
-  const text = input.value.trim();
+  const inp = document.getElementById('slInput');
+  const text = inp.value.trim();
   if (!text) return;
   document.getElementById('slQuicks').innerHTML = '';
-  input.value = ''; input.style.height = 'auto';
-  slAddBubble('user', text);
-  slAsk(text);
+  inp.value = ''; inp.style.height = 'auto';
+  slAddBubble('user', text); slAsk(text);
 }
 
-async function slAsk(userMsg) {
+async function slAsk(msg) {
   document.getElementById('slSendBtn').disabled = true;
   slShowTyping();
-
-  slChatHistory.push({ role: 'user', content: userMsg });
-
+  slChatHistory.push({ role: 'user', parts: [{ text: msg }] });
   try {
-    const res = await fetch(NVIDIA_URL, {
+    const res = await fetch(GEMINI_URL, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${NVIDIA_API_KEY}`
-      },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: NVIDIA_MODEL,
-        messages: [
-          { role: 'system', content: SYSTEM_PROMPT },
-          ...slChatHistory
-        ],
-        max_tokens: 300,
-        temperature: 0.75,
-        top_p: 0.70,
-        stream: false
+        system_instruction: { parts: [{ text: SYSTEM_PROMPT }] },
+        contents: slChatHistory,
+        generationConfig: { temperature: 0.75, maxOutputTokens: 280 }
       })
     });
-
     const data = await res.json();
     slHideTyping();
+    if (data.error) { slAddBubble('bot', '⚠️ API issue. Please add your Gemini key in the HTML.'); document.getElementById('slSendBtn').disabled = false; return; }
+    let reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, please try again!";
+    slChatHistory.push({ role: 'model', parts: [{ text: reply }] });
 
-    if (data.error || !data.choices) {
-      slAddBubble('bot', '⚠️ API Key issue. Please paste your new NVIDIA key in the HTML file.');
-      document.getElementById('slSendBtn').disabled = false;
-      return;
-    }
-
-    let reply = data.choices?.[0]?.message?.content || "Sorry, I didn't get that. Please try again!";
-    slChatHistory.push({ role: 'assistant', content: reply });
-
-    // Check for lead capture trigger
     if (reply.includes('LEAD_CAPTURED:')) {
-      const leadMatch = reply.match(/LEAD_CAPTURED:(.*)/);
-      const leadInfo = leadMatch ? leadMatch[1] : '';
+      const m = reply.match(/LEAD_CAPTURED:(.*)/);
       reply = reply.replace(/LEAD_CAPTURED:.*/, '').trim();
-      slAddBubble('bot', reply || "🎉 Got your details! Kapil will WhatsApp you shortly.");
-      if (!slLeadCaptured) { slLeadCaptured = true; slShowLeadWhatsApp(leadInfo); }
+      slAddBubble('bot', reply || '🎉 Got your details! Kapil will reach out shortly.');
+      if (!slLeadCaptured) { slLeadCaptured = true; slShowWAButton(m?.[1] || ''); }
     } else {
       slAddBubble('bot', reply);
-      // Show lead form after a few exchanges
-      if (slChatHistory.length >= 6 && !slLeadCaptured) {
-        setTimeout(slShowLeadMiniForm, 500);
-      } else {
-        slShowContextQuicks(reply);
-      }
+      if (slChatHistory.length >= 6 && !slLeadCaptured) { setTimeout(slShowLeadForm, 600); }
+      else { slShowContextQuicks(reply); }
     }
   } catch(e) {
     slHideTyping();
-    slAddBubble('bot', '🌐 Network error. Please check your connection and try again.');
+    slAddBubble('bot', '🌐 Network error. Please check your connection.');
   }
-
   document.getElementById('slSendBtn').disabled = false;
 }
 
 function slShowContextQuicks(reply) {
-  const lower = reply.toLowerCase();
-  const quicks = document.getElementById('slQuicks');
-  quicks.innerHTML = '';
-  if (lower.includes('plan') || lower.includes('price') || lower.includes('₹')) {
-    slShowQuicks(['✅ Starter ₹999', '🌐 Growth ₹2998', '🎯 Custom Plan']);
-  } else if (lower.includes('demo') || lower.includes('example')) {
-    slShowQuicks(['🏋️ Gym Demo', '🏠 Hostel Demo', '🏗️ Real Estate Demo']);
-  } else if (lower.includes('24') || lower.includes('fast') || lower.includes('quick')) {
-    slShowQuicks(['📋 Start my project', '💰 See pricing', '📞 Call Kapil']);
-  } else if (slChatHistory.length >= 4) {
-    slShowQuicks(['📋 Get a free quote', '💬 WhatsApp Kapil', '🖥️ See our work']);
-  }
+  const r = reply.toLowerCase();
+  if (r.includes('plan') || r.includes('₹') || r.includes('price')) slShowQuicks(['✅ Growth ₹1999', '🚀 Pro ₹2999', '💰 Starter ₹999']);
+  else if (r.includes('demo') || r.includes('free')) slShowQuicks(['📋 Request free demo', '💬 WhatsApp Kapil']);
+  else if (slChatHistory.length >= 4) slShowQuicks(['📋 Get free demo', '💬 WhatsApp Kapil', '💰 See pricing']);
 }
 
-function slShowLeadMiniForm() {
+function slShowLeadForm() {
   if (slLeadCaptured) return;
   const msgs = document.getElementById('slMsgs');
-  const wrap = document.createElement('div');
-  wrap.className = 'sl-bubble bot';
-  wrap.style.maxWidth = '95%';
-  wrap.innerHTML = `
-    <p style="margin-bottom:10px;font-size:0.83rem;color:rgba(255,255,255,0.7)">
-      💬 <strong style="color:#fff">Get a FREE quote from Kapil!</strong><br>
-      Drop your details below 👇
-    </p>
+  const w = document.createElement('div');
+  w.className = 'sl-bubble bot'; w.style.maxWidth = '95%';
+  w.innerHTML = `<p style="margin-bottom:10px;font-size:0.82rem">💪 <strong style="color:#fff">Get your free gym demo!</strong><br>Drop your details 👇</p>
     <div class="sl-lead-form">
-      <input type="text" id="sl-lead-name" placeholder="Your Name *" />
-      <input type="text" id="sl-lead-biz" placeholder="Business Name & Type *" />
-      <input type="tel" id="sl-lead-phone" placeholder="WhatsApp Number *" maxlength="10" />
-      <button class="sl-lead-btn" onclick="slSubmitLead()">
-        💬 Send to Kapil on WhatsApp
-      </button>
+      <input type="text" id="sl-name" placeholder="Your Name *"/>
+      <input type="text" id="sl-gym" placeholder="Gym Name *"/>
+      <input type="tel" id="sl-phone" placeholder="WhatsApp Number *" maxlength="10"/>
+      <button class="sl-lead-btn" onclick="slSubmitLead()">💬 Send to Kapil on WhatsApp</button>
     </div>`;
-  msgs.appendChild(wrap);
-  msgs.scrollTop = msgs.scrollHeight;
+  msgs.appendChild(w); msgs.scrollTop = msgs.scrollHeight;
   slLeadCaptured = true;
 }
 
 function slSubmitLead() {
-  const name = document.getElementById('sl-lead-name')?.value.trim();
-  const biz = document.getElementById('sl-lead-biz')?.value.trim();
-  const phone = document.getElementById('sl-lead-phone')?.value.trim();
-  if (!name || !biz || !phone) {
-    alert('Please fill all fields!'); return;
-  }
-  slShowLeadWhatsApp(`name=${name}, business=${biz}, phone=${phone}`);
+  const n = document.getElementById('sl-name')?.value.trim();
+  const g = document.getElementById('sl-gym')?.value.trim();
+  const p = document.getElementById('sl-phone')?.value.trim();
+  if (!n || !g || !p) { alert('Please fill all fields!'); return; }
+  slShowWAButton(`name=${n}, gym=${g}, phone=${p}`);
 }
 
-function slShowLeadWhatsApp(leadInfo) {
+function slShowWAButton(info) {
+  const nm = info.match(/name=([^,]+)/i)?.[1]?.trim() || 'Gym Owner';
+  const gm = info.match(/gym=([^,]+)/i)?.[1]?.trim() || 'their gym';
+  const ph = info.match(/phone=([^,]+)/i)?.[1]?.trim() || '';
+  const waMsg = `🏋️ *New Gym Lead via SiteLab AI*\n\n👤 Name: ${nm}\n🏋️ Gym: ${gm}\n📱 Phone: ${ph}\n\n_From AI chatbot — SiteLab India_`;
   const msgs = document.getElementById('slMsgs');
-  document.getElementById('slQuicks').innerHTML = '';
-
-  // Parse lead info
-  const nameMatch = leadInfo.match(/name=([^,]+)/i);
-  const bizMatch = leadInfo.match(/business=([^,]+)/i);
-  const phoneMatch = leadInfo.match(/phone=([^,]+)/i);
-  const name = nameMatch ? nameMatch[1].trim() : 'a visitor';
-  const biz = bizMatch ? bizMatch[1].trim() : 'their business';
-  const phone = phoneMatch ? phoneMatch[1].trim() : '';
-
-  const waMsg = `🤖 *New Lead from SiteLab AI Assistant*\n\n👤 Name: ${name}\n🏢 Business: ${biz}\n📱 WhatsApp: ${phone || 'Not provided'}\n\n_This lead was collected via the AI chatbot on your portfolio website._`;
-  const waURL = `https://wa.me/919460722862?text=${encodeURIComponent(waMsg)}`;
-
-  const div = document.createElement('div');
-  div.className = 'sl-bubble bot';
-  div.style.maxWidth = '95%';
-  div.innerHTML = `
-    <p style="margin-bottom:10px;font-size:0.84rem">🎉 <strong style="color:#FFB800">Perfect, ${name}!</strong><br>
-    Your details are ready to send to Kapil. He'll get back to you fast!</p>
-    <a href="${waURL}" target="_blank" style="
-      display:flex; align-items:center; justify-content:center; gap:8px;
-      background:#25D366; color:#fff; text-decoration:none;
-      padding:12px 16px; border-radius:10px; font-weight:700; font-size:0.85rem;
-    ">💬 Send My Details to Kapil →</a>
-    <p style="font-size:0.7rem;color:rgba(255,255,255,0.3);margin-top:8px;text-align:center">Opens WhatsApp with your info pre-filled</p>`;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
+  const d = document.createElement('div');
+  d.className = 'sl-bubble bot'; d.style.maxWidth = '95%';
+  d.innerHTML = `<p style="margin-bottom:10px;font-size:0.83rem">🎉 <strong style="color:#E8000D">Done, ${nm}!</strong><br>Click below to send your details to Kapil!</p>
+    <a href="https://wa.me/919460722862?text=${encodeURIComponent(waMsg)}" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;text-decoration:none;padding:12px;border-radius:10px;font-weight:700;font-size:0.85rem">💬 Send My Details to Kapil →</a>
+    <p style="font-size:0.68rem;color:rgba(255,255,255,0.3);margin-top:8px;text-align:center">Opens WhatsApp with your info pre-filled</p>`;
+  msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
 }
 
-// Auto show notif after 4s, hide after 8s
+// Show notif after 5s
 setTimeout(() => {
   const n = document.getElementById('sl-notif');
-  if (n && !slIsOpen) {
-    n.style.display = '';
-    setTimeout(() => { if (!slIsOpen) { n.style.display = 'none'; slNotifDismissed = true; } }, 5000);
-  }
-}, 4000);
+  if (!slIsOpen) { n.style.display = 'block'; setTimeout(() => { if (!slIsOpen) n.style.display = 'none'; }, 5000); }
+}, 5000);
 </script>
 </body>
 </html>
